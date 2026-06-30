@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Tema Tecjato — cores, tipografia e tokens da marca (Tailwind v4)
+   ========================================================================== */
+@theme {
+  --color-azul-digital: #0057ff; /* CTAs, links, destaques no claro */
+  --color-azul-inst: #014076; /* seções escuras, rodapé, títulos */
+  --color-azul-inst-700: #012b4f; /* hover de superfícies escuras */
+  --color-cinza-claro: #f3f5f8;
+  --color-cinza-borda: #e2e7ee;
+
+  --font-display: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1a2230;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Foco visível e acessível em toda a navegação por teclado */
+:focus-visible {
+  outline: 3px solid var(--color-azul-digital);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Assinatura visual: textura hachurada (hachura diagonal da marca)
+   ========================================================================== */
+.hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.10) 0,
+    rgba(255, 255, 255, 0.10) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
+
+.hatch-dark {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(1, 64, 118, 0.10) 0,
+    rgba(1, 64, 118, 0.10) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
+
+/* Corte diagonal — recorte inferior das seções/imagens (assinatura da marca) */
+.clip-diagonal-b {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5vw), 0 100%);
+}
+
+.clip-diagonal-t {
+  clip-path: polygon(0 3.5vw, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ==========================================================================
+   Esteira de logos — animação lateral contínua
+   ========================================================================== */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 38s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    transform: none;
+  }
+}
