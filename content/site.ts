@@ -565,8 +565,8 @@ export const home = {
         id: "solucoes",
         title: "Soluções em jateamento industrial",
         subtitle:
-          "Engenharia própria atendendo o Brasil, a Europa e os Estados Unidos.",
-        image: "/fotos/world_map_metal_balls.webp",
+          "Engenharia própria atendendo a América do Sul, a Europa e o Oriente Médio.",
+        image: "/fotos/mapamundi_tec.png",
         imageAlt: "Presença global da Tecjato no mercado de jateamento",
         interest: undefined,
         ctaSecondary: "Ver produtos",
@@ -578,7 +578,7 @@ export const home = {
     { value: "desde 1987", label: "fabricando no Brasil" },
     { value: "+200", label: "clientes atendidos" },
     { value: "ISO 9001:2015", label: "qualidade certificada" },
-    { value: "3 continentes", label: "Brasil, Europa e EUA" },
+    { value: "3 continentes", label: "América do Sul, Europa e Oriente Médio" },
   ],
   clientsStrip: {
     title: "Quem confia na Tecjato",
@@ -589,14 +589,14 @@ export const home = {
     title: "Uma fábrica que controla o processo inteiro.",
     paragraphs: [
       "A Tecjato nasceu em 1987, em São Paulo/SP, e cresceu fazendo o que poucos fabricantes fazem: dominar cada etapa da preparação de superfícies. Integrada ao Grupo Febratec, projeta máquinas de jateamento e linha contínua, funde as próprias peças, produz o próprio abrasivo e mantém estoque de reposição, tudo sob o mesmo teto.",
-      "Essa verticalização, somada à certificação ISO 9001:2015 e à parceria oficial com a Electronics Inc. em shot peening, sustenta entregas confiáveis para a indústria no Brasil, na América Latina, na Europa e nos Estados Unidos.",
+      "Essa verticalização, somada à certificação ISO 9001:2015 e à parceria oficial com a Electronics Inc. em shot peening, sustenta entregas confiáveis para a indústria na América do Sul, na Europa e no Oriente Médio.",
     ],
     cta: "Conheça nossa história",
   },
   productsGrid: {
     title: "O que a Tecjato fabrica",
     subtitle:
-      "Quatro categorias que se sustentam: o equipamento, o abrasivo que o alimenta, a reposição e a assistência que o mantêm em operação.",
+      "Quatro categorias que se sustentam: o equipamento, o abrasivo que o alimenta, as peças de reposição e a assistência que o mantêm em operação.",
   },
   why: {
     title: "Por que Tecjato",
@@ -624,9 +624,9 @@ export const home = {
   },
   testimonial: {
     quote:
-      "[Placeholder — depoimento real de cliente a ser inserido. Substituir por citação autorizada, com nome, cargo e empresa.]",
-    author: "Nome do cliente",
-    role: "Cargo — Empresa",
+      "Deixo registrado meus parabéns a toda a equipe envolvida no projeto e minha gratidão por mais um equipamento que vai elevar o nível de qualidade de nossos produtos.",
+    author: "Aesa",
+    role: "Cliente Tecjato",
   },
   finalCta: {
     title: "Pronto para especificar a sua máquina?",
@@ -769,7 +769,7 @@ export const certificationsPage = {
     },
     {
       title: "Habilitação de exportação (Siscomex)",
-      text: "Empresa habilitada no Siscomex para exportar. Garante operação de comércio exterior regular e entrega de máquinas e abrasivos para América Latina, Europa e EUA.",
+      text: "Empresa habilitada no Siscomex para exportar. Garante operação de comércio exterior regular e entrega de máquinas e abrasivos para América do Sul, Europa e Oriente Médio.",
     },
   ],
 };

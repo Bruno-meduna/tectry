@@ -15,10 +15,9 @@ export const clientLogos: ClientLogo[] = [
   { file: "Facchini.png", name: "Facchini", w: 1999, hpx: 277, h: 28 },
   { file: "schulz.png", name: "Schulz", w: 390, hpx: 150, h: 40 },
   { file: "cinpal.png", name: "Cinpal", w: 1999, hpx: 636, h: 40 },
-  { file: "Seatrium.png", name: "Seatrium", w: 1999, hpx: 723, h: 42 },
+  { file: "Seatrium_correto.png", name: "Seatrium", w: 7397, hpx: 2671, h: 48 },
   { file: "Gratt.png", name: "Gratt", w: 1200, hpx: 628, h: 50 },
-  { file: "Brasfel.png", name: "Brasfel", w: 270, hpx: 334, h: 58 },
-  { file: "metlsider.png", name: "Metalsider", w: 601, hpx: 601, h: 56 },
+  { file: "Metalsider_2.png", name: "Metalsider", w: 447, hpx: 447, h: 64 },
   { file: "rosseti.png", name: "Rosseti", w: 1140, hpx: 191, h: 30 },
   { file: "mmcite.png", name: "mmcité", w: 567, hpx: 231, h: 42 },
 ];

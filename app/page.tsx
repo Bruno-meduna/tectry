@@ -1,9 +1,5 @@
 import Link from "next/link";
-import {
-  home,
-  productCategories,
-  certificationsPage,
-} from "@/content/site";
+import { home, productCategories } from "@/content/site";
 import PhotoMontage from "@/components/ui/PhotoMontage";
 import QuoteButton from "@/components/quote/QuoteButton";
 import ProductCard from "@/components/ProductCard";
@@ -87,53 +83,6 @@ export default function HomePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. POR QUE TECJATO ------------------------------------------------- */}
-      <section className="hatch-dark relative overflow-hidden bg-azul-inst py-16 text-white lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-            {home.why.title}
-          </h2>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2">
-            {home.why.reasons.map((r, i) => (
-              <div key={r.title} className="flex gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-azul-digital font-display font-bold">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-bold">{r.title}</h3>
-                  <p className="mt-1.5 text-blue-100/85">{r.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. FAIXA DE CERTIFICAÇÕES ----------------------------------------- */}
-      <section className="bg-white py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-sm font-bold uppercase tracking-widest text-slate-400">
-            {home.certifications.title}
-          </h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {certificationsPage.items.map((c) => (
-              <div
-                key={c.title}
-                className="flex items-center gap-3 rounded-lg border border-cinza-borda bg-cinza-claro px-5 py-4"
-              >
-                <svg className="h-8 w-8 shrink-0 text-azul-digital" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
-                  <circle cx="12" cy="12" r="9" />
-                </svg>
-                <span className="font-display text-sm font-bold text-azul-inst">
-                  {c.title}
-                </span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
