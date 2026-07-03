@@ -576,7 +576,7 @@ export const home = {
   },
   proof: [
     { value: "desde 1987", label: "fabricando no Brasil" },
-    { value: "+200", label: "clientes atendidos" },
+    { value: "+2000", label: "clientes atendidos" },
     { value: "ISO 9001:2015", label: "qualidade certificada" },
     { value: "3 continentes", label: "América do Sul, Europa e Oriente Médio" },
   ],
@@ -625,8 +625,8 @@ export const home = {
   testimonial: {
     quote:
       "Deixo registrado meus parabéns a toda a equipe envolvida no projeto e minha gratidão por mais um equipamento que vai elevar o nível de qualidade de nossos produtos.",
-    author: "Aesa",
-    role: "Cliente Tecjato",
+    author: "Fábio Bearzi",
+    role: "Diretor da Aesa",
   },
   finalCta: {
     title: "Pronto para especificar a sua máquina?",

@@ -105,7 +105,7 @@ export default function HomePage() {
       </section>
 
       {/* 8. CTA FINAL ------------------------------------------------------- */}
-      <section className="relative overflow-hidden bg-azul-digital py-16 text-white lg:py-20">
+      <section className="relative flex items-center overflow-hidden bg-azul-digital py-12 text-white sm:aspect-[24/5] sm:py-0">
         <img
           src="/fotos/Footer.jpg"
           alt=""

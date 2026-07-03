@@ -6,7 +6,7 @@ import Link from "next/link";
 import QuoteButton from "@/components/quote/QuoteButton";
 import { home } from "@/content/site";
 
-const INTERVAL = 15000; // 15s entre slides
+const INTERVAL = 5000; // 5s entre slides
 
 type Slide = (typeof home.hero.slides)[number];
 
