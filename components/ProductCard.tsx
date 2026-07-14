@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ProductCategory } from "@/content/site";
 import { productsPage } from "@/content/site";
 import ProductIcon from "./ui/ProductIcon";
+import ArrowIcon from "./ui/ArrowIcon";
 
 export default function ProductCard({ category }: { category: ProductCategory }) {
   return (
@@ -20,9 +21,7 @@ export default function ProductCard({ category }: { category: ProductCategory })
       </p>
       <span className="mt-5 inline-flex items-center gap-1.5 font-display text-sm font-semibold text-azul-digital transition group-hover:gap-2.5">
         {productsPage.cardCta}
-        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
+        <ArrowIcon />
       </span>
     </Link>
   );

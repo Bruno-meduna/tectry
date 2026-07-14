@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { nav, productCategories, company } from "@/content/site";
 import QuoteButton from "./quote/QuoteButton";
+import ArrowIcon from "./ui/ArrowIcon";
 
 export default function Header() {
   const pathname = usePathname();
@@ -87,9 +88,7 @@ export default function Header() {
                           className="inline-flex items-center gap-1.5 text-sm font-semibold text-azul-digital transition hover:gap-2.5"
                         >
                           Ver todos os produtos
-                          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-                          </svg>
+                          <ArrowIcon />
                         </Link>
                       </div>
                     </div>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { aboutPage, company } from "@/content/site";
 import QuoteButton from "@/components/quote/QuoteButton";
 import PhotoMontage from "@/components/ui/PhotoMontage";
+import PageHero from "@/components/ui/PageHero";
+import CtaBanner from "@/components/CtaBanner";
 import Timeline from "@/components/about/Timeline";
 
 export const metadata: Metadata = {
@@ -15,16 +17,7 @@ export default function QuemSomosPage() {
   return (
     <>
       {/* Cabeçalho */}
-      <section className="hatch-dark bg-azul-inst py-16 text-white lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display text-4xl font-extrabold sm:text-5xl">
-            {aboutPage.title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-blue-100/85">
-            {aboutPage.intro}
-          </p>
-        </div>
-      </section>
+      <PageHero title={aboutPage.title} intro={aboutPage.intro} />
 
       {/* Narrativa + foto */}
       <section className="bg-white py-16 lg:py-20">
@@ -81,39 +74,19 @@ export default function QuemSomosPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden bg-azul-digital py-16 text-white lg:py-20">
-        <img
-          src="/fotos/Footer.jpg"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div
-          className="absolute inset-0 bg-azul-digital/40"
-          aria-hidden="true"
-        />
-        <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-            {aboutPage.cta.title}
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-lg text-blue-50">
-            {aboutPage.cta.subtitle}
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <QuoteButton variant="light" className="px-8 py-3.5 text-base">
-              {aboutPage.cta.button}
-            </QuoteButton>
-            <a
-              href={company.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md border border-white/40 px-8 py-3.5 font-display text-base font-semibold text-white transition hover:bg-white/10"
-            >
-              Falar no WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      <CtaBanner title={aboutPage.cta.title} subtitle={aboutPage.cta.subtitle}>
+        <QuoteButton variant="light" className="px-8 py-3.5 text-base">
+          {aboutPage.cta.button}
+        </QuoteButton>
+        <a
+          href={company.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center rounded-md border border-white/40 px-8 py-3.5 font-display text-base font-semibold text-white transition hover:bg-white/10"
+        >
+          Falar no WhatsApp
+        </a>
+      </CtaBanner>
     </>
   );
 }

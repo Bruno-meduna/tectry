@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { productCategoryById, company, type ProductCategoryId } from "@/content/site";
+import {
+  productCategories,
+  productCategoryById,
+  company,
+  type ProductCategoryId,
+} from "@/content/site";
 
 export const runtime = "nodejs";
 
@@ -23,10 +28,15 @@ function esc(v = ""): string {
   return v
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 const isEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+const isCategoryId = (v: string): v is ProductCategoryId =>
+  productCategories.some((c) => c.id === v);
 
 export async function POST(req: Request) {
   let body: Payload;
@@ -46,7 +56,7 @@ export async function POST(req: Request) {
   const email = (body.email || "").trim();
   const phone = (body.phone || "").trim();
   const country = (body.country || "").trim();
-  const interestId = (body.interest || "").trim() as ProductCategoryId;
+  const interestId = (body.interest || "").trim();
   const message = (body.message || "").trim();
 
   if (!name || !empresa || !email || !phone || !interestId) {
@@ -55,9 +65,11 @@ export async function POST(req: Request) {
   if (!isEmail(email)) {
     return NextResponse.json({ error: "invalid_email" }, { status: 400 });
   }
+  if (!isCategoryId(interestId)) {
+    return NextResponse.json({ error: "invalid_interest" }, { status: 400 });
+  }
 
-  const line = productCategoryById(interestId);
-  const interestLabel = line.label;
+  const interestLabel = productCategoryById(interestId).label;
 
   if (!process.env.RESEND_API_KEY) {
     console.error("RESEND_API_KEY ausente — não foi possível enviar a cotação.");

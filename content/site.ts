@@ -121,7 +121,6 @@ export const productCategories: ProductCategory[] = [
               "A série MGF é compacta, versátil e oferece excelente custo-benefício. O gancho é montado na porta do compartimento de jato. Possui duas turbinas com acionamento direto pelo motor.",
               "A série MOF pode ter uma ou mais turbinas, monovia em Y, T ou L (monovia em circuito fechado). O gancho tem capacidade de peso adequada para cada caso específico.",
             ],
-            image: "/fotos/gan1.avif",
           },
           {
             slug: "mesa-rotativa",
@@ -140,7 +139,6 @@ export const productCategories: ProductCategory[] = [
               "• Limpeza de moldes",
               "• Peças forjadas",
             ],
-            image: "/fotos/turbinado_mesa_rotativa.jpg",
           },
           {
             slug: "shot-peening",
@@ -150,7 +148,6 @@ export const productCategories: ProductCategory[] = [
             detail: [
               "As máquinas Tecjato de “shot peening” realizam um trabalho de martelamento da superfície das peças induzindo-as a tensões residuais previamente estabelecidas com o objetivo de aumentar a resistência à fadiga. Este processo tornou-se indispensável na fabricação de molas helicoidais, engrenagens, rodas dentadas, virabrequim entre outros.",
             ],
-            image: "/fotos/turbinado_shot_peening.avif",
           },
           {
             slug: "monovias",
@@ -161,7 +158,6 @@ export const productCategories: ProductCategory[] = [
               "As Monovias de Linha Contínua são muito utilizadas em linhas de peças com alta produtividade e em geral utilizam elevado número de turbinas.",
               "Têm como principal característica a automatização do processo produtivo, tornando o ambiente de trabalho mais seguro devido à redução de contato humano, eficiente por causa da uniformidade do processo e econômico em função de desprezar a necessidade de uma estocagem entre processos.",
             ],
-            image: "/fotos/turbinado_monovias.avif",
           },
           {
             slug: "esteira-horizontal",
@@ -180,7 +176,6 @@ export const productCategories: ProductCategory[] = [
               "• Fácil integração",
               "• 1 a 12 turbinas",
             ],
-            image: "/fotos/turbinado_esteira_horizontal.avif",
           },
           {
             slug: "esteira-tamboreadora",
@@ -192,7 +187,6 @@ export const productCategories: ProductCategory[] = [
               "O compartimento de jateamento é revestido com materiais altamente resistentes à abrasão, garantindo durabilidade ao equipamento.",
               "Este equipamento está disponível em várias capacidades, existindo sempre uma adequada a cada cliente.",
             ],
-            image: "/fotos/turbinado_esteira_tamboreadora.avif",
           },
           {
             slug: "decapagem-tubos-barras",
@@ -210,7 +204,6 @@ export const productCategories: ProductCategory[] = [
               "As máquinas oferecem alto rendimento e baixo custo operacional, existindo sempre um modelo adequado à sua necessidade de produção, podendo incluir sistema de carga e descarga automático.",
               "O compartimento de jateamento é completamente revestido com materiais resistentes à abrasão.",
             ],
-            image: "/fotos/turbinado_decapagem_tubos_barras.avif",
           },
           {
             slug: "jateamento-botijoes-gas",
@@ -224,7 +217,6 @@ export const productCategories: ProductCategory[] = [
               "• Turbinas de alto desempenho Tecjato: concebidas em uma fundição dedicada a ligas resistentes à abrasão na própria empresa, com certificação de qualidade ISO 9001.",
               "• Baixo custo operacional: nossos equipamentos são dotados de sistemas calculados buscando maior equilíbrio entre custo operacional e produtividade.",
             ],
-            image: "/fotos/turbinado_botijoes_gas.avif",
           },
         ],
       },

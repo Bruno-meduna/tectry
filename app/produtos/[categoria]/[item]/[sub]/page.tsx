@@ -11,6 +11,7 @@ import {
 import LinkButton from "@/components/ui/LinkButton";
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import ProductIcon from "@/components/ui/ProductIcon";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 /**
  * Renderiza o texto da página do equipamento em blocos: linhas iniciadas por
@@ -105,27 +106,17 @@ export default async function SubItemPage({
       {/* Cabeçalho com breadcrumb de 4 níveis */}
       <section className="hatch-dark bg-azul-inst py-14 text-white lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav aria-label="Trilha" className="text-sm text-blue-100/70">
-            <Link href="/produtos" className="transition hover:text-white">
-              {productsPage.backToProducts}
-            </Link>
-            <span className="px-2">/</span>
-            <Link
-              href={`/produtos/${category.id}`}
-              className="transition hover:text-white"
-            >
-              {category.label}
-            </Link>
-            <span className="px-2">/</span>
-            <Link
-              href={`/produtos/${category.id}/${product.slug}`}
-              className="transition hover:text-white"
-            >
-              {product.name}
-            </Link>
-            <span className="px-2">/</span>
-            <span className="text-blue-50">{equipment.name}</span>
-          </nav>
+          <Breadcrumb
+            trail={[
+              { label: productsPage.backToProducts, href: "/produtos" },
+              { label: category.label, href: `/produtos/${category.id}` },
+              {
+                label: product.name,
+                href: `/produtos/${category.id}/${product.slug}`,
+              },
+              { label: equipment.name },
+            ]}
+          />
           <div className="mt-5 flex items-start gap-4">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-azul-digital text-white">
               <ProductIcon id={category.id} className="h-6 w-6" />

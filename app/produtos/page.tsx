@@ -5,6 +5,8 @@ import { productCategories, productsPage } from "@/content/site";
 import QuoteButton from "@/components/quote/QuoteButton";
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import ProductIcon from "@/components/ui/ProductIcon";
+import ArrowIcon from "@/components/ui/ArrowIcon";
+import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Produtos — equipamentos, abrasivos, reposição e assistência",
@@ -17,16 +19,7 @@ export default function ProdutosPage() {
   return (
     <>
       {/* Cabeçalho */}
-      <section className="hatch-dark bg-azul-inst py-16 text-white lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display text-4xl font-extrabold sm:text-5xl">
-            {productsPage.title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-blue-100/85">
-            {productsPage.intro}
-          </p>
-        </div>
-      </section>
+      <PageHero title={productsPage.title} intro={productsPage.intro} />
 
       {/* Vitrine de categorias */}
       <section className="bg-white py-16 lg:py-20">
@@ -71,9 +64,7 @@ export default function ProdutosPage() {
                 <p className="mt-3 flex-1 text-slate-600">{category.tagline}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 font-display text-sm font-semibold text-azul-digital transition group-hover:gap-2.5">
                   {productsPage.cardCta}
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-                  </svg>
+                  <ArrowIcon />
                 </span>
               </div>
             </Link>

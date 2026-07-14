@@ -6,6 +6,7 @@ import {
   type ProductCategoryId,
 } from "@/content/site";
 import QuoteForm from "@/components/quote/QuoteForm";
+import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Contato — fale com a engenharia da Tecjato",
@@ -49,16 +50,7 @@ export default async function ContatoPage({
 
   return (
     <>
-      <section className="hatch-dark bg-azul-inst py-16 text-white lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="font-display text-4xl font-extrabold sm:text-5xl">
-            {contactPage.title}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-blue-100/85">
-            {contactPage.intro}
-          </p>
-        </div>
-      </section>
+      <PageHero title={contactPage.title} intro={contactPage.intro} />
 
       <section className="bg-white py-16 lg:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:px-8">

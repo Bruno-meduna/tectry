@@ -5,16 +5,18 @@ import QuoteButton from "@/components/quote/QuoteButton";
 import ProductCard from "@/components/ProductCard";
 import ClientLogos from "@/components/ClientLogos";
 import HeroRotator from "@/components/ui/HeroRotator";
+import ArrowIcon from "@/components/ui/ArrowIcon";
+import CtaBanner from "@/components/CtaBanner";
 
 export default function HomePage() {
   return (
     <>
-      {/* 1. HERO ------------------------------------------------------------ */}
+      {/* HERO ---------------------------------------------------------------- */}
       <section className="relative">
         <HeroRotator />
       </section>
 
-      {/* 2. FAIXA DE PROVAS ------------------------------------------------- */}
+      {/* FAIXA DE PROVAS ------------------------------------------------------ */}
       <section className="border-b border-cinza-borda bg-white">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden px-4 py-10 sm:px-6 lg:grid-cols-4 lg:px-8">
           {home.proof.map((item) => (
@@ -28,7 +30,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. ESTEIRA DE CLIENTES -------------------------------------------- */}
+      {/* ESTEIRA DE CLIENTES -------------------------------------------------- */}
       <section className="bg-white py-14">
         <div className="mx-auto mb-8 max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-2xl font-bold text-azul-inst sm:text-3xl">
@@ -39,7 +41,7 @@ export default function HomePage() {
         <ClientLogos />
       </section>
 
-      {/* 4. GRID DE PRODUTOS ----------------------------------------------- */}
+      {/* GRID DE PRODUTOS ------------------------------------------------------ */}
       <section className="bg-cinza-claro py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
@@ -58,7 +60,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4b. QUEM SOMOS ---------------------------------------------------- */}
+      {/* QUEM SOMOS ------------------------------------------------------------ */}
       <section className="bg-white py-16 lg:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <PhotoMontage className="lg:order-1" />
@@ -79,15 +81,13 @@ export default function HomePage() {
               className="mt-7 inline-flex items-center gap-2 font-display font-semibold text-azul-digital transition hover:gap-3"
             >
               {home.about.cta}
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
+              <ArrowIcon />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 7. DEPOIMENTO ------------------------------------------------------ */}
+      {/* DEPOIMENTO ------------------------------------------------------------ */}
       <section className="bg-cinza-claro py-16 lg:py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <svg className="mx-auto h-10 w-10 text-azul-digital/30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -104,32 +104,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. CTA FINAL ------------------------------------------------------- */}
-      <section className="relative flex items-center overflow-hidden bg-azul-digital py-12 text-white sm:aspect-[24/5] sm:py-0">
-        <img
-          src="/fotos/Footer.jpg"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div
-          className="absolute inset-0 bg-azul-digital/40"
-          aria-hidden="true"
-        />
-        <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
-            {home.finalCta.title}
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-lg text-blue-50">
-            {home.finalCta.subtitle}
-          </p>
-          <div className="mt-8">
-            <QuoteButton variant="light" className="px-8 py-3.5 text-base">
-              {home.finalCta.cta}
-            </QuoteButton>
-          </div>
-        </div>
-      </section>
+      {/* CTA FINAL --------------------------------------------------------------- */}
+      <CtaBanner
+        title={home.finalCta.title}
+        subtitle={home.finalCta.subtitle}
+        className="py-12 sm:aspect-[24/5] sm:py-0"
+      >
+        <QuoteButton variant="light" className="px-8 py-3.5 text-base">
+          {home.finalCta.cta}
+        </QuoteButton>
+      </CtaBanner>
     </>
   );
 }

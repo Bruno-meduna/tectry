@@ -131,7 +131,7 @@ export default function QuoteForm({
         </label>
       </div>
 
-      <div className={variant === "modal" ? "grid gap-4 sm:grid-cols-2" : "grid gap-4 sm:grid-cols-2"}>
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="qf-name" className={labelCls}>
             {t.fields.name} <span className="text-azul-digital">*</span>
