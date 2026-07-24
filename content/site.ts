@@ -7,6 +7,7 @@
 
 export type ProductCategoryId =
   | "equipamentos"
+  | "pintura"
   | "abrasivos"
   | "reposicao"
   | "assistencia";
@@ -317,6 +318,134 @@ export const productCategories: ProductCategory[] = [
     ],
   },
   {
+    id: "pintura",
+    label: "Equipamentos de pintura",
+    title: "Equipamentos de pintura",
+    tagline: "Cabines, transportador aéreo e estufas para a linha de pintura.",
+    description:
+      "Equipamentos de pintura industrial dimensionados para o seu produto e o seu volume: cabines com o sistema de filtragem mais adequado ao processo, transportador aéreo para movimentar as peças entre as etapas e estufas para a cura. Fazemos também a linha completa, integrando jateamento e pintura no mesmo processo.",
+    imageAlt: "Cabine de pintura Tecjato em operação",
+    image: "/fotos/Cabine_de_pintura_cad.jpg",
+    heroImage: "/fotos/Pintura_1.avif",
+    items: [
+      {
+        slug: "cabine-pintura",
+        name: "Cabine de pintura",
+        description:
+          "Cabines de pintura com o sistema de filtragem mais adequado ao seu processo: a seco, líquida ou eletrostática a pó.",
+        image: "/fotos/Cabine_de_pintura_cad.jpg",
+        intro:
+          "Cabines de pintura Tecjato, dimensionadas conforme a peça, o volume de produção e a tecnologia de pintura escolhida.",
+        subItems: [
+          {
+            slug: "cabine-pintura-filtragem-seco",
+            name: "Cabine de pintura — filtragem a seco",
+            description:
+              "Retenção do overspray por filtros, sem uso de água, para linhas de pintura a pó ou líquida.",
+          },
+          {
+            slug: "cabine-pintura-filtragem-liquida",
+            name: "Cabine de pintura — filtragem líquida",
+            description:
+              "Retenção do overspray por cortina de água, indicada para processos de maior volume de tinta líquida.",
+          },
+          {
+            slug: "cabine-pintura-a-po",
+            name: "Cabine de pintura a pó",
+            description:
+              "Aplicação eletrostática de tinta em pó, com sistema de recuperação de material e acabamento uniforme.",
+          },
+        ],
+      },
+      {
+        slug: "transportador-aereo",
+        name: "Transportador aéreo",
+        description:
+          "Transportador aéreo para movimentação contínua das peças entre as etapas de jateamento, pintura e cura.",
+      },
+      {
+        slug: "estufa-pintura",
+        name: "Estufa de pintura",
+        description:
+          "Estufas para cura e secagem da pintura, nas versões estacionária ou de passagem.",
+        intro:
+          "Estufas de pintura Tecjato, dimensionadas conforme o volume de produção e o fluxo da linha.",
+        subItems: [
+          {
+            slug: "estufa-pintura-estacionaria",
+            name: "Estufa de pintura estacionária",
+            description:
+              "Câmara única para cura em lote, indicada para produções menores ou peças de maior porte.",
+          },
+          {
+            slug: "estufa-pintura-passagem",
+            name: "Estufa de pintura de passagem",
+            description:
+              "Túnel contínuo integrado à linha, para cura em fluxo constante e maior produtividade.",
+          },
+        ],
+      },
+      {
+        slug: "linha-completa",
+        name: "Linha completa: jateamento + pintura",
+        description:
+          "Linha integrada de preparação de superfície e pintura, projetada de ponta a ponta pela mesma engenharia.",
+        image: "/fotos/Pintura_turbinado.jpg",
+        heroImage: "/fotos/Pintura_1.avif",
+        intro:
+          "Linha integrada de preparação de superfície e pintura, projetada de ponta a ponta pela mesma engenharia Tecjato. Escolha a tecnologia de pintura mais adequada ao seu produto e ao seu volume de produção.",
+        subItems: [
+          {
+            slug: "cabine-pintura-eletrostatica-po",
+            name: "Cabine de pintura eletrostática a pó",
+            description:
+              "Aplicação eletrostática de tinta em pó para acabamento uniforme, alta aderência e excelente aproveitamento de material.",
+            detail: [
+              "As cabines de pintura eletrostática a pó Tecjato aplicam tinta em pó carregada eletrostaticamente sobre a peça aterrada, garantindo uma camada uniforme com alta aderência e ótimo aproveitamento de material.",
+              "Após a aplicação, a peça segue para a cura em estufa, formando um revestimento resistente à corrosão, ao impacto e à abrasão.",
+              "Características:",
+              "• Alto aproveitamento de tinta com sistema de recuperação de pó",
+              "• Acabamento uniforme e resistente",
+              "• Processo limpo, sem solventes",
+              "• Fácil integração com a linha de jateamento",
+            ],
+            image: "/fotos/Cabine_de_pintura_cad.jpg",
+          },
+          {
+            slug: "pintura-a-seco",
+            name: "Pintura a seco",
+            description:
+              "Processo de pintura a pó sem uso de solventes, ideal para acabamentos resistentes e ambientes mais limpos.",
+            detail: [
+              "A pintura a seco utiliza tintas em pó aplicadas sem o uso de solventes, resultando em um processo mais limpo, seguro e com menor impacto ambiental.",
+              "Indicada para peças que exigem acabamento resistente e durável, é integrada à linha de preparação de superfície para um fluxo de produção contínuo.",
+              "Características:",
+              "• Sem emissão de solventes",
+              "• Camada espessa e resistente em uma única aplicação",
+              "• Menor desperdício de material",
+            ],
+            image: "/fotos/Pintura_turbinado.jpg",
+          },
+          {
+            slug: "pintura-liquida",
+            name: "Pintura líquida",
+            description:
+              "Aplicação de tintas líquidas para acabamentos versáteis, com ampla gama de cores e texturas.",
+            detail: [
+              "A pintura líquida Tecjato oferece grande versatilidade de cores, brilhos e texturas, sendo indicada para peças que exigem acabamento estético diferenciado ou especificações técnicas específicas.",
+              "As cabines são projetadas com sistemas de exaustão e filtragem que garantem segurança ao operador e qualidade no acabamento.",
+              "Aplicações comuns:",
+              "• Peças com geometria complexa",
+              "• Acabamentos especiais e cores personalizadas",
+              "• Integração com linhas de jateamento e secagem",
+            ],
+            image: "/fotos/Pintura_1.avif",
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "abrasivos",
     label: "Abrasivos",
     title: "Abrasivos e granalha de aço",
@@ -617,7 +746,7 @@ export const home = {
   productsGrid: {
     title: "O que a Tecjato fabrica",
     subtitle:
-      "Quatro categorias que se sustentam: o equipamento, o abrasivo que o alimenta, as peças de reposição e a assistência que o mantêm em operação.",
+      "Cinco categorias que se sustentam: os equipamentos de jateamento e de pintura, o abrasivo que os alimenta, as peças de reposição e a assistência que os mantêm em operação.",
   },
   why: {
     title: "Por que Tecjato",
@@ -740,7 +869,7 @@ export const aboutPage = {
 export const productsPage = {
   title: "Produtos",
   intro:
-    "Quatro categorias verticalizadas de preparação de superfícies. Escolha uma categoria para ver a linha completa e solicitar uma cotação — a engenharia responde com proposta sob medida.",
+    "Cinco categorias verticalizadas de preparação de superfícies. Escolha uma categoria para ver a linha completa e solicitar uma cotação — a engenharia responde com proposta sob medida.",
   itemsHeading: "O que essa categoria inclui",
   cardCta: "Ver linha completa",
   backToProducts: "Todos os produtos",

@@ -19,6 +19,15 @@ const icons: Record<ProductCategoryId, React.ReactNode> = {
       <path d="M14 17h1" />
     </>
   ),
+  pintura: (
+    <>
+      <rect x="7.5" y="3.5" width="5" height="3.5" rx="1" />
+      <rect x="6" y="7" width="8" height="13" rx="2" />
+      <path d="M15.5 7.5l3 -1.5" />
+      <path d="M16.3 11l3.3 -0.3" />
+      <path d="M15.5 14.5l3 1.4" />
+    </>
+  ),
   abrasivos: (
     <>
       <circle cx="7" cy="8" r="1.3" />

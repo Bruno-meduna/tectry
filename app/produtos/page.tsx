@@ -9,9 +9,9 @@ import ArrowIcon from "@/components/ui/ArrowIcon";
 import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
-  title: "Produtos — equipamentos, abrasivos, reposição e assistência",
+  title: "Produtos — equipamentos, pintura, abrasivos, reposição e assistência",
   description:
-    "Quatro categorias verticalizadas: equipamentos de jateamento turbinados e a ar comprimido, abrasivos de produção própria, peças de reposição e assistência técnica especializada.",
+    "Cinco categorias verticalizadas: equipamentos de jateamento turbinados e a ar comprimido, equipamentos de pintura, abrasivos de produção própria, peças de reposição e assistência técnica especializada.",
   alternates: { canonical: "/produtos" },
 };
 

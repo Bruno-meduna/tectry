@@ -53,9 +53,9 @@ export default function Header() {
                   </svg>
                 </Link>
                 {prodOpen && (
-                  <div className="absolute left-1/2 top-full w-[760px] max-w-[calc(100vw-2rem)] -translate-x-1/2 pt-2">
+                  <div className="absolute left-1/2 top-full w-[860px] max-w-[calc(100vw-2rem)] -translate-x-1/2 pt-2">
                     <div className="overflow-hidden rounded-xl border border-cinza-borda bg-white p-5 shadow-xl">
-                      <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-4">
+                      <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-5">
                         {productCategories.map((cat) => (
                           <div key={cat.id}>
                             <Link

@@ -74,7 +74,11 @@ export default function QuemSomosPage() {
       </section>
 
       {/* CTA */}
-      <CtaBanner title={aboutPage.cta.title} subtitle={aboutPage.cta.subtitle}>
+      <CtaBanner
+        title={aboutPage.cta.title}
+        subtitle={aboutPage.cta.subtitle}
+        className="py-12 sm:aspect-[24/5] sm:py-0"
+      >
         <QuoteButton variant="light" className="px-8 py-3.5 text-base">
           {aboutPage.cta.button}
         </QuoteButton>
