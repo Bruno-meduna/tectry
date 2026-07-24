@@ -117,9 +117,13 @@ export const productCategories: ProductCategory[] = [
             description:
               "As gancheiras Tecjato são ideais para o jateamento de peças de alta produção que não possam sofrer tombamento.",
             detail: [
-              "As gancheiras Tecjato são ideais para o jateamento de peças de alta produção que não possam sofrer tombamento.",
-              "A série MGF é compacta, versátil e oferece excelente custo-benefício. O gancho é montado na porta do compartimento de jato. Possui duas turbinas com acionamento direto pelo motor.",
-              "A série MOF pode ter uma ou mais turbinas, monovia em Y, T ou L (monovia em circuito fechado). O gancho tem capacidade de peso adequada para cada caso específico.",
+              "As gancheiras Tecjato são ideais para o jateamento de peças de alta produção que não possam sofrer tombamento, mantendo a peça suspensa durante todo o ciclo.",
+              "A série MGF é compacta, versátil e oferece excelente custo-benefício. A série MOF é modular e pode ser configurada com uma ou mais turbinas, conforme a necessidade de produção.",
+              "Características:",
+              "• Séries MGF (compacta) e MOF (modular)",
+              "• Gancho com capacidade de peso adequada a cada caso",
+              "• Turbinas com acionamento direto pelo motor",
+              "• Monovia em Y, T ou L em circuito fechado (série MOF)",
             ],
           },
           {
@@ -146,7 +150,12 @@ export const productCategories: ProductCategory[] = [
             description:
               "As máquinas de “shot peening” da Tecjato são equipadas com componentes de última geração para ótimo controle do processo.",
             detail: [
-              "As máquinas Tecjato de “shot peening” realizam um trabalho de martelamento da superfície das peças induzindo-as a tensões residuais previamente estabelecidas com o objetivo de aumentar a resistência à fadiga. Este processo tornou-se indispensável na fabricação de molas helicoidais, engrenagens, rodas dentadas, virabrequim entre outros.",
+              "As máquinas Tecjato de “shot peening” realizam um trabalho de martelamento da superfície das peças, induzindo-as a tensões residuais previamente estabelecidas com o objetivo de aumentar a resistência à fadiga.",
+              "São equipadas com componentes de última geração para ótimo controle do processo, que se tornou indispensável em aplicações de alta exigência mecânica.",
+              "Aplicações comuns:",
+              "• Molas helicoidais",
+              "• Engrenagens e rodas dentadas",
+              "• Virabrequins",
             ],
           },
           {
@@ -157,6 +166,12 @@ export const productCategories: ProductCategory[] = [
             detail: [
               "As Monovias de Linha Contínua são muito utilizadas em linhas de peças com alta produtividade e em geral utilizam elevado número de turbinas.",
               "Têm como principal característica a automatização do processo produtivo, tornando o ambiente de trabalho mais seguro devido à redução de contato humano, eficiente por causa da uniformidade do processo e econômico em função de desprezar a necessidade de uma estocagem entre processos.",
+              "Características:",
+              "• Processo automatizado e contínuo",
+              "• Elevado número de turbinas",
+              "• Uniformidade de tratamento em toda a linha",
+              "• Dispensa estocagem entre processos",
+              "• Redução do contato humano com o processo",
             ],
           },
           {
@@ -183,9 +198,17 @@ export const productCategories: ProductCategory[] = [
             description:
               "As máquinas de jateamento tipo esteira tamboreadora limpam com rapidez e eficiência grande quantidade de peças que possam ser tombadas.",
             detail: [
-              "Os equipamentos de jateamento tipo esteira tamboreadora são destinados à limpeza, rebarbação, “shot peening” e acabamento superficial de peças forjadas, fundidas, laminadas, entre outras peças que possam ser tombadas. A esteira pode ser de aço – TBA ou borracha – TBB.",
-              "O compartimento de jateamento é revestido com materiais altamente resistentes à abrasão, garantindo durabilidade ao equipamento.",
-              "Este equipamento está disponível em várias capacidades, existindo sempre uma adequada a cada cliente.",
+              "Os equipamentos de jateamento tipo esteira tamboreadora são destinados à limpeza, rebarbação, “shot peening” e acabamento superficial de peças que possam ser tombadas, limpando com rapidez e eficiência grande quantidade de peças por ciclo.",
+              "O compartimento de jateamento é revestido com materiais altamente resistentes à abrasão, garantindo durabilidade ao equipamento. Está disponível em várias capacidades, existindo sempre uma adequada a cada cliente.",
+              "Características:",
+              "• Esteira em aço (TBA) ou borracha (TBB)",
+              "• Compartimento revestido contra abrasão",
+              "• Diversas capacidades disponíveis",
+              "• Limpeza, rebarbação e “shot peening” no mesmo equipamento",
+              "Aplicações comuns:",
+              "• Peças forjadas",
+              "• Peças fundidas",
+              "• Peças laminadas",
             ],
           },
           {
@@ -194,15 +217,17 @@ export const productCategories: ProductCategory[] = [
             description:
               "Os equipamentos para decapagem mecânica Tecjato são projetados para limpeza, decapagem mecânica e tratamento de superfície de peças.",
             detail: [
-              "Os equipamentos para decapagem mecânica Tecjato são projetados para limpeza, decapagem mecânica e tratamento de superfície de peças como:",
-              "• Chapas",
-              "• Tubos",
-              "• Barras",
-              "• Vigas",
-              "• Perfis",
+              "Os equipamentos para decapagem mecânica Tecjato são projetados para limpeza, decapagem mecânica e tratamento de superfície de perfis metálicos em fluxo contínuo.",
+              "As máquinas oferecem alto rendimento e baixo custo operacional, existindo sempre um modelo adequado à sua necessidade de produção. O compartimento de jateamento é completamente revestido com materiais resistentes à abrasão.",
+              "Características:",
+              "• Compartimento totalmente revestido contra abrasão",
+              "• Alto rendimento e baixo custo operacional",
+              "• Sistema de carga e descarga automático (opcional)",
+              "• Modelos dimensionados por necessidade de produção",
+              "Aplicações comuns:",
+              "• Chapas, tubos e barras",
+              "• Vigas e perfis",
               "• Estrutura metálica em geral",
-              "As máquinas oferecem alto rendimento e baixo custo operacional, existindo sempre um modelo adequado à sua necessidade de produção, podendo incluir sistema de carga e descarga automático.",
-              "O compartimento de jateamento é completamente revestido com materiais resistentes à abrasão.",
             ],
           },
           {
@@ -211,11 +236,15 @@ export const productCategories: ProductCategory[] = [
             description:
               "Os equipamentos para jateamento de botijões de gás Tecjato são altamente eficientes para jateamento em larga escala.",
             detail: [
-              "Os equipamentos para jateamento de botijões de gás Tecjato são altamente eficientes para jateamento em larga escala. Sua construção modular e os opcionais da linha facilitam a integração em instalações já existentes.",
-              "Diferenciais:",
-              "• Roletes cônicos: movimentação inteligente e econômica, admite os modelos de botijões P-13, P-20 e P-45 para jateamento contínuo.",
-              "• Turbinas de alto desempenho Tecjato: concebidas em uma fundição dedicada a ligas resistentes à abrasão na própria empresa, com certificação de qualidade ISO 9001.",
-              "• Baixo custo operacional: nossos equipamentos são dotados de sistemas calculados buscando maior equilíbrio entre custo operacional e produtividade.",
+              "Os equipamentos para jateamento de botijões de gás Tecjato são altamente eficientes para jateamento em larga escala.",
+              "Sua construção modular e os opcionais da linha facilitam a integração em instalações já existentes.",
+              "Características:",
+              "• Roletes cônicos para movimentação contínua e econômica",
+              "• Compatível com os modelos de botijões P-13, P-20 e P-45",
+              "• Turbinas de alto desempenho de fundição própria",
+              "• Ligas resistentes à abrasão com certificação ISO 9001",
+              "• Sistemas calculados para equilíbrio entre custo e produtividade",
+              "• Construção modular para integração em linhas existentes",
             ],
           },
         ],
@@ -254,7 +283,7 @@ export const productCategories: ProductCategory[] = [
             detail: [
               "A pintura a seco utiliza tintas em pó aplicadas sem o uso de solventes, resultando em um processo mais limpo, seguro e com menor impacto ambiental.",
               "Indicada para peças que exigem acabamento resistente e durável, é integrada à linha de preparação de superfície para um fluxo de produção contínuo.",
-              "Vantagens:",
+              "Características:",
               "• Sem emissão de solventes",
               "• Camada espessa e resistente em uma única aplicação",
               "• Menor desperdício de material",
@@ -269,7 +298,7 @@ export const productCategories: ProductCategory[] = [
             detail: [
               "A pintura líquida Tecjato oferece grande versatilidade de cores, brilhos e texturas, sendo indicada para peças que exigem acabamento estético diferenciado ou especificações técnicas específicas.",
               "As cabines são projetadas com sistemas de exaustão e filtragem que garantem segurança ao operador e qualidade no acabamento.",
-              "Aplicações:",
+              "Aplicações comuns:",
               "• Peças com geometria complexa",
               "• Acabamentos especiais e cores personalizadas",
               "• Integração com linhas de jateamento e secagem",
