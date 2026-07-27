@@ -52,9 +52,14 @@ export default function HomePage() {
               {home.productsGrid.subtitle}
             </p>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 flex flex-wrap justify-center gap-6">
             {productCategories.map((category) => (
-              <ProductCard key={category.id} category={category} />
+              <div
+                key={category.id}
+                className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+              >
+                <ProductCard category={category} />
+              </div>
             ))}
           </div>
         </div>
