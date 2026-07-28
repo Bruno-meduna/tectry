@@ -126,6 +126,7 @@ export const productCategories: ProductCategory[] = [
               "• Turbinas com acionamento direto pelo motor",
               "• Monovia em Y, T ou L em circuito fechado (série MOF)",
             ],
+            image: "/fotos/Gancheira.jpg",
           },
           {
             slug: "mesa-rotativa",
@@ -144,6 +145,7 @@ export const productCategories: ProductCategory[] = [
               "• Limpeza de moldes",
               "• Peças forjadas",
             ],
+            image: "/fotos/mesarotativa.jpg",
           },
           {
             slug: "shot-peening",
@@ -192,6 +194,7 @@ export const productCategories: ProductCategory[] = [
               "• Fácil integração",
               "• 1 a 12 turbinas",
             ],
+            image: "/fotos/mesahorizontal.jpg",
           },
           {
             slug: "esteira-tamboreadora",
@@ -247,6 +250,7 @@ export const productCategories: ProductCategory[] = [
               "• Sistemas calculados para equilíbrio entre custo e produtividade",
               "• Construção modular para integração em linhas existentes",
             ],
+            image: "/fotos/botijao-gas.jpg",
           },
         ],
       },
