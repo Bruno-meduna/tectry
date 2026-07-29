@@ -329,7 +329,7 @@ export const productCategories: ProductCategory[] = [
     description:
       "Equipamentos de pintura industrial dimensionados para o seu produto e o seu volume: cabines com o sistema de filtragem mais adequado ao processo, transportador aéreo para movimentar as peças entre as etapas e estufas para a cura. Fazemos também a linha completa, integrando jateamento e pintura no mesmo processo.",
     imageAlt: "Cabine de pintura Tecjato em operação",
-    image: "/fotos/Cabine_de_pintura_cad.jpg",
+    image: "/fotos/cabine-pintura.jpg",
     heroImage: "/fotos/Pintura_1.avif",
     items: [
       {
@@ -337,7 +337,7 @@ export const productCategories: ProductCategory[] = [
         name: "Cabine de pintura",
         description:
           "Cabines de pintura com o sistema de filtragem mais adequado ao seu processo: a seco, líquida ou eletrostática a pó.",
-        image: "/fotos/Cabine_de_pintura_cad.jpg",
+        image: "/fotos/cabine-pintura.jpg",
         intro:
           "Cabines de pintura Tecjato, dimensionadas conforme a peça, o volume de produção e a tecnologia de pintura escolhida.",
         subItems: [
@@ -372,6 +372,7 @@ export const productCategories: ProductCategory[] = [
         name: "Estufa de pintura",
         description:
           "Estufas para cura e secagem da pintura, nas versões estacionária ou de passagem.",
+        image: "/fotos/estufa-pintura.jpg",
         intro:
           "Estufas de pintura Tecjato, dimensionadas conforme o volume de produção e o fluxo da linha.",
         subItems: [
