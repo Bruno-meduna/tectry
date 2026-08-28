@@ -7,11 +7,13 @@ import {
   productCategories,
   productSubItemBy,
   productsPage,
+  resourcesPage,
 } from "@/content/site";
 import LinkButton from "@/components/ui/LinkButton";
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import ProductIcon from "@/components/ui/ProductIcon";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import SpecDownloadButton from "@/components/ui/SpecDownloadButton";
 
 /**
  * Renderiza o texto da página do equipamento em blocos: linhas iniciadas por
@@ -163,7 +165,7 @@ export default async function SubItemPage({
               . Conte a sua aplicação e a engenharia responde com proposta
               dimensionada.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap gap-3">
               <LinkButton
                 href={`/contato?interest=${category.id}`}
                 variant="primary"
@@ -171,7 +173,30 @@ export default async function SubItemPage({
               >
                 Fale conosco
               </LinkButton>
+              {equipment.specFile && <SpecDownloadButton file={equipment.specFile} />}
+              {product.catalogFile && (
+                <SpecDownloadButton
+                  file={product.catalogFile}
+                  folder="catalogos"
+                  label="catálogo"
+                />
+              )}
+              {product.fdsFile && (
+                <SpecDownloadButton
+                  file={product.fdsFile}
+                  folder="seguranca"
+                  label="FDS"
+                />
+              )}
             </div>
+            {(equipment.specFile || product.catalogFile || product.fdsFile) && (
+              <Link
+                href="/recursos"
+                className="mt-4 inline-flex items-center gap-1.5 font-display text-sm font-semibold text-azul-digital hover:underline"
+              >
+                {resourcesPage.viewAll} →
+              </Link>
+            )}
           </div>
         </div>
       </section>

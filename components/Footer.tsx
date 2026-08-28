@@ -58,6 +58,14 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href={footer.resourcesHref}
+                  className="text-sm text-blue-50/90 transition hover:text-white"
+                >
+                  {footer.resourcesLabel}
+                </Link>
+              </li>
             </ul>
           </nav>
 

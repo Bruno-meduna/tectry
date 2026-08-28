@@ -6,12 +6,15 @@ import {
   productCategories,
   productItemBy,
   productsPage,
+  resourcesPage,
 } from "@/content/site";
 import LinkButton from "@/components/ui/LinkButton";
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import ProductIcon from "@/components/ui/ProductIcon";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import SpecDownloadButton from "@/components/ui/SpecDownloadButton";
+import DownloadIcon from "@/components/ui/DownloadIcon";
 
 export function generateStaticParams() {
   return productCategories.flatMap((c) =>
@@ -103,6 +106,31 @@ export default async function ItemPage({
                 {product.intro}
               </p>
             )}
+            {(product.catalogFile || product.fdsFile) && (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {product.catalogFile && (
+                  <SpecDownloadButton
+                    file={product.catalogFile}
+                    folder="catalogos"
+                    label="catálogo"
+                  />
+                )}
+                {product.fdsFile && (
+                  <SpecDownloadButton
+                    file={product.fdsFile}
+                    folder="seguranca"
+                    label="FDS"
+                  />
+                )}
+                <Link
+                  href="/recursos"
+                  className="inline-flex items-center gap-2 rounded-md px-6 py-3 font-display text-[15px] font-semibold text-azul-digital transition hover:underline"
+                >
+                  <DownloadIcon />
+                  {resourcesPage.viewAll}
+                </Link>
+              </div>
+            )}
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {product.subItems.map((sub) => (
                 <Link
@@ -172,17 +200,32 @@ export default async function ItemPage({
                 . Solicite uma cotação e a engenharia responde com proposta
                 dimensionada para a sua aplicação.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-wrap gap-3">
                 <LinkButton href={`/contato?interest=${category.id}`} variant="primary" className="px-8 py-3.5 text-base">
                   Fale conosco
                 </LinkButton>
+                {product.specFile && <SpecDownloadButton file={product.specFile} />}
               </div>
             </div>
-            <PhotoPlaceholder
-              label={product.name}
-              diagonal="b"
-              className="aspect-[4/3] w-full"
-            />
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-cinza-claro clip-diagonal-b">
+              {product.image ? (
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+              ) : (
+                <PhotoPlaceholder
+                  label={product.name}
+                  diagonal="b"
+                  rounded={false}
+                  className="h-full w-full"
+                />
+              )}
+            </div>
           </div>
         </section>
       )}

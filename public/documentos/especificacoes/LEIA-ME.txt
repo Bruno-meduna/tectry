@@ -1,0 +1,14 @@
+Coloque os PDFs de especificação técnica nesta pasta com o nome exato abaixo.
+Os botões de download já aparecem ativos nas páginas de produto e em /recursos
+(mesmo antes do arquivo existir); assim que você colocar o PDF aqui com o nome
+certo, o download passa a funcionar de verdade (precisa rodar `npm run build` /
+redeploy).
+
+- tecshot.pdf              →  Tecshot — Steel Shot esférica
+- tecgrit.pdf              →  Tecgrit — Steel Grit angular
+- micro-esfera-vidro.pdf   →  Micro Esfera de Vidro
+- oxido-aluminio.pdf       →  Óxido de Alumínio
+- inox-esferica.pdf        →  Inox Esférica
+- inox-angular.pdf         →  Inox Angular
+- arame-inox-cortado.pdf   →  Granalha de Arame Inox Cortado
+- arame-cortado.pdf        →  Granalha de Arame Carbono Cortado

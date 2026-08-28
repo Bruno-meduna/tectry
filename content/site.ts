@@ -27,6 +27,12 @@ export interface ProductSubItem {
   detail?: string[];
   /** Foto do equipamento (em /public). Sem isso, usa placeholder. */
   image?: string;
+  /**
+   * Nome do PDF de especificação em /public/documentos/especificacoes/.
+   * O botão de download só aparece ativo quando o arquivo existe; sem ele,
+   * mostra "em breve".
+   */
+  specFile?: string;
 }
 
 /** Item dentro de uma categoria (nível 2 do fluxo, estilo Winoa). */
@@ -45,6 +51,12 @@ export interface ProductItem {
   intro?: string;
   /** Sub-equipamentos exibidos em grade na página do item. */
   subItems?: ProductSubItem[];
+  /** Nome do PDF de especificação em /public/documentos/especificacoes/. */
+  specFile?: string;
+  /** Nome do PDF de catálogo em /public/documentos/catalogos/. */
+  catalogFile?: string;
+  /** Nome do PDF de FDS (ficha de dados de segurança) em /public/documentos/seguranca/. */
+  fdsFile?: string;
 }
 
 export interface ProductCategory {
@@ -214,6 +226,7 @@ export const productCategories: ProductCategory[] = [
               "• Peças fundidas",
               "• Peças laminadas",
             ],
+            image: "/fotos/esteira-tamboreadora.jpg",
           },
           {
             slug: "decapagem-tubos-barras",
@@ -465,6 +478,9 @@ export const productCategories: ProductCategory[] = [
         name: "Granalha de Aço Alto Carbono",
         description:
           "Steel Shot esférica (Tecshot) e Steel Grit angular (Tecgrit). Abrasivo de alta durabilidade para limpeza, decapagem e preparação de superfície.",
+        image: "/fotos/tecshot.jpg",
+        catalogFile: "granalha-aco-alto-carbono.pdf",
+        fdsFile: "granalha-aco-alto-carbono.pdf",
         intro:
           "Granalha de aço alto carbono de produção própria, com controle metalúrgico e granulométrico lote a lote. Disponível nas versões esférica (Tecshot) e angular (Tecgrit), cada uma indicada para um tipo de acabamento.",
         subItems: [
@@ -481,6 +497,8 @@ export const productCategories: ProductCategory[] = [
               "• Alta durabilidade e baixo consumo",
               "• Granulometria controlada conforme a aplicação",
             ],
+            image: "/fotos/tecshot.jpg",
+            specFile: "tecshot.pdf",
           },
           {
             slug: "tecgrit",
@@ -495,6 +513,8 @@ export const productCategories: ProductCategory[] = [
               "• Perfil de ancoragem controlado",
               "• Produção própria com qualidade consistente",
             ],
+            image: "/fotos/tecgrit.jpg",
+            specFile: "tecgrit.pdf",
           },
         ],
       },
@@ -503,12 +523,16 @@ export const productCategories: ProductCategory[] = [
         name: "Micro Esfera de Vidro",
         description:
           "Acabamento fosco acetinado e limpeza suave sem alterar a dimensão da peça. Ideal para inox e ligas não ferrosas.",
+        image: "/fotos/micro-esfera-vidro.jpg",
+        specFile: "micro-esfera-vidro.pdf",
       },
       {
         slug: "oxido-aluminio",
         name: "Óxido de Alumínio",
         description:
           "Abrasivo angular de alta dureza para decapagem agressiva, fosqueamento e preparação para revestimento.",
+        image: "/fotos/oxido-aluminio.jpg",
+        specFile: "oxido-aluminio.pdf",
       },
       {
         slug: "granalha-inox-fundida",
@@ -531,6 +555,7 @@ export const productCategories: ProductCategory[] = [
               "• Acabamento uniforme e limpo",
               "• Alta resistência à oxidação",
             ],
+            specFile: "inox-esferica.pdf",
           },
           {
             slug: "inox-angular",
@@ -545,6 +570,7 @@ export const productCategories: ProductCategory[] = [
               "• Sem contaminação ferrosa",
               "• Ideal para inox e ligas não ferrosas",
             ],
+            specFile: "inox-angular.pdf",
           },
         ],
       },
@@ -553,12 +579,14 @@ export const productCategories: ProductCategory[] = [
         name: "Granalha de Arame Inox Cortado",
         description:
           "Cut Wire em aço inox: alta resistência e vida útil prolongada, sem risco de oxidação na peça.",
+        specFile: "arame-inox-cortado.pdf",
       },
       {
         slug: "arame-cortado",
         name: "Granalha de Arame Carbono Cortado",
         description:
           "Carbon Cut Wire em aço carbono: uniformidade dimensional e durabilidade para grandes volumes.",
+        specFile: "arame-cortado.pdf",
       },
     ],
   },
@@ -974,4 +1002,23 @@ export const footer = {
   internalLinkLabel: "Acesso interno — Representante",
   internalLinkHref: "https://desk.auvo.com.br/Login",
   rights: "Tecjato — Grupo Febratec. Todos os direitos reservados.",
+  resourcesLabel: "Recursos e downloads",
+  resourcesHref: "/recursos",
+};
+
+/** Certificados institucionais em /public/documentos/certificados/. */
+export const certificates: { name: string; file: string }[] = [
+  { name: "Certificado ISO 9001:2015", file: "certificado-iso-9001.pdf" },
+];
+
+export const resourcesPage = {
+  title: "Recursos e downloads",
+  intro:
+    "Certificados, catálogos, fichas de segurança e especificações técnicas dos nossos produtos, organizados por categoria.",
+  certificatesLabel: "Certificados",
+  catalogsLabel: "Catálogos",
+  safetyLabel: "Fichas de dados de segurança (FDS)",
+  specsLabel: "Especificações técnicas — Abrasivos",
+  download: "Baixar",
+  viewAll: "Ver recursos e downloads",
 };

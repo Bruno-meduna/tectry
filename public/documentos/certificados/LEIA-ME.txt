@@ -1,0 +1,9 @@
+Coloque os PDFs de certificados nesta pasta com o nome exato abaixo.
+Os botões de download no site já aparecem ativos (mesmo antes do arquivo existir);
+assim que você colocar o PDF aqui com o nome certo, o download passa a funcionar de
+verdade (precisa rodar `npm run build` / redeploy).
+
+- certificado-iso-9001.pdf  →  Certificado ISO 9001:2015
+
+Para adicionar um novo certificado, inclua a entrada correspondente em `certificates`
+no arquivo content/site.ts (nome + nome do arquivo).
