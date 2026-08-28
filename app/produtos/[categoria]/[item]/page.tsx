@@ -150,7 +150,7 @@ export default async function ItemPage({
                 aria-hidden="true"
                 fill
                 sizes="(max-width: 1280px) 100vw, 1216px"
-                className="object-cover object-[center_20%]"
+                className="object-cover object-[center_32%]"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-azul-inst/95 via-azul-inst/85 to-azul-inst/65" />
               <div className="relative flex flex-col items-center gap-4 px-6 py-12 text-center sm:py-14">
