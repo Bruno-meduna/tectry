@@ -143,14 +143,32 @@ export default async function ItemPage({
                 </Link>
               ))}
             </div>
-            <div className="mt-12 flex flex-col items-center gap-4 rounded-2xl border border-cinza-borda bg-cinza-claro px-6 py-10 text-center">
-              <p className="max-w-xl text-slate-600">
-                Não encontrou o equipamento ideal? Conte a sua aplicação e a
-                engenharia responde com proposta dimensionada.
-              </p>
-              <LinkButton href={`/contato?interest=${category.id}`} variant="primary" className="px-8 py-3.5 text-base">
-                Fale conosco
-              </LinkButton>
+            <div className="relative mt-12 overflow-hidden rounded-2xl bg-azul-inst text-white">
+              <Image
+                src="/fotos/equipe_feira_tec.JPG"
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="(max-width: 1280px) 100vw, 1216px"
+                className="object-cover object-[center_20%]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-azul-inst/95 via-azul-inst/85 to-azul-inst/65" />
+              <div className="relative flex flex-col items-center gap-4 px-6 py-12 text-center sm:py-14">
+                <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
+                  Não encontrou o equipamento ideal?
+                </h2>
+                <p className="max-w-xl text-blue-50">
+                  Conte a sua aplicação e a engenharia responde com proposta
+                  dimensionada.
+                </p>
+                <LinkButton
+                  href={`/contato?interest=${category.id}`}
+                  variant="light"
+                  className="mt-2 px-8 py-3.5 text-base"
+                >
+                  Fale conosco
+                </LinkButton>
+              </div>
             </div>
             <ProductDownloads
               catalogFile={product.catalogFile}
