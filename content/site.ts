@@ -1020,5 +1020,6 @@ export const resourcesPage = {
   safetyLabel: "Fichas de dados de segurança (FDS)",
   specsLabel: "Especificações técnicas — Abrasivos",
   download: "Baixar",
+  downloadsTitle: "Downloads",
   viewAll: "Ver recursos e downloads",
 };

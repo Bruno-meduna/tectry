@@ -6,15 +6,13 @@ import {
   productCategories,
   productItemBy,
   productsPage,
-  resourcesPage,
 } from "@/content/site";
 import LinkButton from "@/components/ui/LinkButton";
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import ProductIcon from "@/components/ui/ProductIcon";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import SpecDownloadButton from "@/components/ui/SpecDownloadButton";
-import DownloadIcon from "@/components/ui/DownloadIcon";
+import ProductDownloads from "@/components/ui/ProductDownloads";
 
 export function generateStaticParams() {
   return productCategories.flatMap((c) =>
@@ -106,31 +104,6 @@ export default async function ItemPage({
                 {product.intro}
               </p>
             )}
-            {(product.catalogFile || product.fdsFile) && (
-              <div className="mt-6 flex flex-wrap gap-3">
-                {product.catalogFile && (
-                  <SpecDownloadButton
-                    file={product.catalogFile}
-                    folder="catalogos"
-                    label="catálogo"
-                  />
-                )}
-                {product.fdsFile && (
-                  <SpecDownloadButton
-                    file={product.fdsFile}
-                    folder="seguranca"
-                    label="FDS"
-                  />
-                )}
-                <Link
-                  href="/recursos"
-                  className="inline-flex items-center gap-2 rounded-md px-6 py-3 font-display text-[15px] font-semibold text-azul-digital transition hover:underline"
-                >
-                  <DownloadIcon />
-                  {resourcesPage.viewAll}
-                </Link>
-              </div>
-            )}
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {product.subItems.map((sub) => (
                 <Link
@@ -179,6 +152,11 @@ export default async function ItemPage({
                 Fale conosco
               </LinkButton>
             </div>
+            <ProductDownloads
+              catalogFile={product.catalogFile}
+              fdsFile={product.fdsFile}
+              className="mt-12 border-t border-cinza-borda pt-10"
+            />
           </div>
         </section>
       ) : (
@@ -204,8 +182,11 @@ export default async function ItemPage({
                 <LinkButton href={`/contato?interest=${category.id}`} variant="primary" className="px-8 py-3.5 text-base">
                   Fale conosco
                 </LinkButton>
-                {product.specFile && <SpecDownloadButton file={product.specFile} />}
               </div>
+              <ProductDownloads
+                specFile={product.specFile}
+                className="mt-10 border-t border-cinza-borda pt-8"
+              />
             </div>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-cinza-claro clip-diagonal-b">
               {product.image ? (

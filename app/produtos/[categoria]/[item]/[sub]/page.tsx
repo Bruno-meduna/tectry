@@ -7,13 +7,12 @@ import {
   productCategories,
   productSubItemBy,
   productsPage,
-  resourcesPage,
 } from "@/content/site";
 import LinkButton from "@/components/ui/LinkButton";
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import ProductIcon from "@/components/ui/ProductIcon";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import SpecDownloadButton from "@/components/ui/SpecDownloadButton";
+import ProductDownloads from "@/components/ui/ProductDownloads";
 
 /**
  * Renderiza o texto da página do equipamento em blocos: linhas iniciadas por
@@ -173,30 +172,13 @@ export default async function SubItemPage({
               >
                 Fale conosco
               </LinkButton>
-              {equipment.specFile && <SpecDownloadButton file={equipment.specFile} />}
-              {product.catalogFile && (
-                <SpecDownloadButton
-                  file={product.catalogFile}
-                  folder="catalogos"
-                  label="catálogo"
-                />
-              )}
-              {product.fdsFile && (
-                <SpecDownloadButton
-                  file={product.fdsFile}
-                  folder="seguranca"
-                  label="FDS"
-                />
-              )}
             </div>
-            {(equipment.specFile || product.catalogFile || product.fdsFile) && (
-              <Link
-                href="/recursos"
-                className="mt-4 inline-flex items-center gap-1.5 font-display text-sm font-semibold text-azul-digital hover:underline"
-              >
-                {resourcesPage.viewAll} →
-              </Link>
-            )}
+            <ProductDownloads
+              specFile={equipment.specFile}
+              catalogFile={product.catalogFile}
+              fdsFile={product.fdsFile}
+              className="mt-10 border-t border-cinza-borda pt-8"
+            />
           </div>
         </div>
       </section>
