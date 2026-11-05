@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { home, productCategories } from "@/content/site";
+import { home } from "@/content/site";
 import PhotoMontage from "@/components/ui/PhotoMontage";
 import QuoteButton from "@/components/quote/QuoteButton";
-import ProductCard from "@/components/ProductCard";
+import ProductionLine from "@/components/home/ProductionLine";
 import ClientLogos from "@/components/ClientLogos";
 import HeroRotator from "@/components/ui/HeroRotator";
 import ArrowIcon from "@/components/ui/ArrowIcon";
@@ -41,29 +41,8 @@ export default function HomePage() {
         <ClientLogos />
       </section>
 
-      {/* GRID DE PRODUTOS ------------------------------------------------------ */}
-      <section className="bg-cinza-claro py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-3xl font-extrabold text-azul-inst sm:text-4xl">
-              {home.productsGrid.title}
-            </h2>
-            <p className="mt-3 text-lg text-slate-600">
-              {home.productsGrid.subtitle}
-            </p>
-          </div>
-          <div className="mt-10 flex flex-wrap justify-center gap-6">
-            {productCategories.map((category) => (
-              <div
-                key={category.id}
-                className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
-              >
-                <ProductCard category={category} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* LINHA CONTÍNUA -------------------------------------------------------- */}
+      <ProductionLine />
 
       {/* QUEM SOMOS ------------------------------------------------------------ */}
       <section className="bg-white py-16 lg:py-20">

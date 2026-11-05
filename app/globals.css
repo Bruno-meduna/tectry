@@ -101,3 +101,436 @@ h6 {
     transform: none;
   }
 }
+
+/* ==========================================================================
+   Linha contínua da home — a seção prende na tela e o scroll conduz a câmera
+   pela cena. Tudo que é animação do desenho vive aqui; o componente
+   (components/home/ProductionLine.tsx) só cuida do progresso e do foco.
+   ========================================================================== */
+
+/* Estados da peça ao longo da linha. */
+:root {
+  --peca-bruta: #9a5b36;
+  --peca-limpa: #c3ccd8;
+  --peca-pintada: #0057ff;
+}
+
+.linha-rolagem {
+  position: relative;
+}
+
+.linha-fixo {
+  padding: 1rem 0 2.5rem;
+}
+
+.linha-cena {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.125rem;
+  border: 1px solid var(--color-cinza-borda);
+  background: linear-gradient(180deg, #ffffff 0%, #eef2f7 70%, #e6ebf2 100%);
+  box-shadow: 0 20px 44px -30px rgba(1, 64, 118, 0.55);
+}
+
+.linha-trilho {
+  position: relative;
+  height: 100%;
+  will-change: transform;
+}
+
+.linha-trilho svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Rótulos flutuantes sobre a cena (só no modo guiado). */
+.linha-rotulo {
+  display: none;
+}
+
+.linha-barra {
+  display: none;
+}
+
+/* --- painel lateral de etapas --- */
+.linha-passo {
+  display: block;
+  width: 100%;
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.875rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.linha-indice {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #9aa8bb;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.25s;
+}
+
+.linha-nome {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: #5b6676;
+  transition: color 0.25s;
+}
+
+.linha-conteudo {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.linha-conteudo > span {
+  overflow: hidden;
+}
+
+.linha-passo.aberto {
+  background: var(--color-cinza-claro);
+}
+
+.linha-passo.aberto .linha-indice {
+  color: var(--color-azul-digital);
+}
+
+.linha-passo.aberto .linha-nome {
+  color: var(--color-azul-inst);
+  font-weight: 700;
+}
+
+/* --- amostras de cor da legenda --- */
+.linha-amostra {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  margin-right: 7px;
+  vertical-align: -1px;
+}
+.linha-amostra--bruta {
+  background: var(--peca-bruta);
+}
+.linha-amostra--limpa {
+  background: var(--peca-limpa);
+}
+.linha-amostra--pintada {
+  background: var(--peca-pintada);
+}
+
+/* --- peças percorrendo a linha --- */
+.linha-cena .carro {
+  animation: linha-andar 26s linear infinite;
+}
+.linha-cena .carro .peca-corpo {
+  animation: linha-tinta 26s linear infinite;
+}
+.linha-cena .carro .ferrugem {
+  animation: linha-ferrugem 26s linear infinite;
+}
+.linha-cena .carro:nth-of-type(1),
+.linha-cena .carro:nth-of-type(1) .peca-corpo,
+.linha-cena .carro:nth-of-type(1) .ferrugem {
+  animation-delay: 0s;
+}
+.linha-cena .carro:nth-of-type(2),
+.linha-cena .carro:nth-of-type(2) .peca-corpo,
+.linha-cena .carro:nth-of-type(2) .ferrugem {
+  animation-delay: -4.33s;
+}
+.linha-cena .carro:nth-of-type(3),
+.linha-cena .carro:nth-of-type(3) .peca-corpo,
+.linha-cena .carro:nth-of-type(3) .ferrugem {
+  animation-delay: -8.66s;
+}
+.linha-cena .carro:nth-of-type(4),
+.linha-cena .carro:nth-of-type(4) .peca-corpo,
+.linha-cena .carro:nth-of-type(4) .ferrugem {
+  animation-delay: -13s;
+}
+.linha-cena .carro:nth-of-type(5),
+.linha-cena .carro:nth-of-type(5) .peca-corpo,
+.linha-cena .carro:nth-of-type(5) .ferrugem {
+  animation-delay: -17.33s;
+}
+.linha-cena .carro:nth-of-type(6),
+.linha-cena .carro:nth-of-type(6) .peca-corpo,
+.linha-cena .carro:nth-of-type(6) .ferrugem {
+  animation-delay: -21.66s;
+}
+
+@keyframes linha-andar {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1360px);
+  }
+}
+
+/* A peça troca de cor enquanto está escondida dentro de cada máquina. */
+@keyframes linha-tinta {
+  0%,
+  18.9% {
+    fill: var(--peca-bruta);
+  }
+  19%,
+  61.9% {
+    fill: var(--peca-limpa);
+  }
+  62%,
+  100% {
+    fill: var(--peca-pintada);
+  }
+}
+
+@keyframes linha-ferrugem {
+  0%,
+  18.9% {
+    opacity: 0.6;
+  }
+  19%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* --- vida das máquinas --- */
+.linha-cena .granalha circle {
+  animation: linha-cair 1.4s linear infinite;
+}
+@keyframes linha-cair {
+  0% {
+    transform: translateY(-14px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(44px);
+    opacity: 0;
+  }
+}
+
+.linha-cena .faisca {
+  animation: linha-pisca 1.1s ease-in-out infinite alternate;
+}
+@keyframes linha-pisca {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
+
+.linha-cena .braco {
+  transform-box: fill-box;
+  transform-origin: top center;
+  animation: linha-braco 3.2s ease-in-out infinite;
+}
+@keyframes linha-braco {
+  0%,
+  62%,
+  100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-30deg);
+  }
+}
+
+.linha-cena .vapor {
+  animation: linha-vapor 3.6s ease-out infinite;
+}
+@keyframes linha-vapor {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(-42px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.linha-seta {
+  animation: linha-desce 1.8s ease-in-out infinite;
+}
+@keyframes linha-desce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.linha-cena .estacao {
+  transition: filter 0.4s;
+}
+
+/* ==========================================================================
+   Modo guiado (desktop): a seção prende e o scroll vira câmera.
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .linha-rolagem {
+    height: 440vh;
+  }
+
+  .linha-fixo {
+    position: sticky;
+    /* Fica abaixo do cabeçalho fixo de 72px. */
+    top: 72px;
+    height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+  }
+
+  .linha-cena {
+    height: clamp(300px, 56vh, 520px);
+  }
+
+  .linha-trilho svg {
+    width: auto;
+    height: 100%;
+    max-width: none;
+  }
+
+  .linha-trilho {
+    width: max-content;
+  }
+
+  /* Só a estação em foco fica colorida. */
+  .linha-cena.focando .estacao {
+    filter: saturate(0.25) opacity(0.5);
+  }
+  .linha-cena.focando .estacao.ativa {
+    filter: none;
+  }
+
+  .linha-rotulo {
+    position: absolute;
+    top: 14%;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    border-radius: 999px;
+    border: 1px solid var(--color-cinza-borda);
+    background: rgba(255, 255, 255, 0.93);
+    padding: 5px 13px 5px 6px;
+    font-family: var(--font-display);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--color-azul-inst);
+    box-shadow: 0 8px 18px -10px rgba(1, 43, 79, 0.5);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .linha-rotulo b {
+    display: grid;
+    place-items: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: var(--color-azul-digital);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .linha-rotulo.visivel {
+    opacity: 1;
+  }
+  .linha-rotulo.ativo {
+    background: var(--color-azul-digital);
+    border-color: var(--color-azul-digital);
+    color: #fff;
+  }
+  .linha-rotulo.ativo b {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .linha-barra {
+    display: block;
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 3px;
+    background: rgba(1, 64, 118, 0.1);
+  }
+  .linha-barra span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--color-azul-digital);
+    transition: width 0.1s linear;
+  }
+
+  /* Fora do foco, a etapa recolhe o texto. */
+  .linha-conteudo {
+    grid-template-rows: 0fr;
+  }
+  .linha-passo.aberto .linha-conteudo {
+    grid-template-rows: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .linha-cena .carro,
+  .linha-cena .carro .peca-corpo,
+  .linha-cena .carro .ferrugem,
+  .linha-cena .granalha circle,
+  .linha-cena .faisca,
+  .linha-cena .braco,
+  .linha-cena .vapor,
+  .linha-seta {
+    animation: none !important;
+  }
+  .linha-cena .carro:nth-of-type(1) {
+    transform: translateX(30px);
+  }
+  .linha-cena .carro:nth-of-type(2) {
+    transform: translateX(390px);
+  }
+  .linha-cena .carro:nth-of-type(3) {
+    transform: translateX(560px);
+  }
+  .linha-cena .carro:nth-of-type(4) {
+    transform: translateX(690px);
+  }
+  .linha-cena .carro:nth-of-type(5) {
+    transform: translateX(1060px);
+  }
+  .linha-cena .carro:nth-of-type(6) {
+    transform: translateX(1300px);
+  }
+  .linha-cena .carro:nth-of-type(1) .peca-corpo,
+  .linha-cena .carro:nth-of-type(2) .peca-corpo {
+    fill: var(--peca-bruta);
+  }
+  .linha-cena .carro:nth-of-type(3) .peca-corpo,
+  .linha-cena .carro:nth-of-type(4) .peca-corpo {
+    fill: var(--peca-limpa);
+  }
+  .linha-cena .carro:nth-of-type(5) .peca-corpo,
+  .linha-cena .carro:nth-of-type(6) .peca-corpo {
+    fill: var(--peca-pintada);
+  }
+  .linha-cena .carro:nth-of-type(n + 3) .ferrugem {
+    opacity: 0;
+  }
+}
