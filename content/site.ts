@@ -725,7 +725,7 @@ export const home = {
         title: "Soluções em jateamento industrial",
         subtitle:
           "Engenharia própria atendendo a América do Sul, a Europa e o Oriente Médio.",
-        image: "/fotos/mapamundi_tec.png",
+        image: "/fotos/mapamundi_tec.jpg",
         imageAlt: "Presença global da Tecjato no mercado de jateamento",
         interest: undefined,
         ctaSecondary: "Ver produtos",

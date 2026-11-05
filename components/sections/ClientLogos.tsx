@@ -8,17 +8,17 @@ type ClientLogo = { file: string; name: string; w: number; hpx: number; h: numbe
 
 export const clientLogos: ClientLogo[] = [
   { file: "weg.png", name: "WEG", w: 640, hpx: 449, h: 46 },
-  { file: "Iveco.png", name: "Iveco", w: 1999, hpx: 1999, h: 58 },
-  { file: "Johndear.png", name: "John Deere", w: 1999, hpx: 444, h: 36 },
-  { file: "Tupy.png", name: "Tupy", w: 1999, hpx: 611, h: 40 },
-  { file: "maxion.png", name: "Maxion", w: 1900, hpx: 1080, h: 52 },
-  { file: "Facchini.png", name: "Facchini", w: 1999, hpx: 277, h: 28 },
+  { file: "Iveco.png", name: "Iveco", w: 600, hpx: 600, h: 58 },
+  { file: "Johndear.png", name: "John Deere", w: 600, hpx: 133, h: 36 },
+  { file: "Tupy.png", name: "Tupy", w: 600, hpx: 183, h: 40 },
+  { file: "maxion.png", name: "Maxion", w: 600, hpx: 341, h: 52 },
+  { file: "Facchini.png", name: "Facchini", w: 600, hpx: 83, h: 28 },
   { file: "schulz.png", name: "Schulz", w: 390, hpx: 150, h: 40 },
-  { file: "cinpal.png", name: "Cinpal", w: 1999, hpx: 636, h: 40 },
-  { file: "Seatrium_correto.png", name: "Seatrium", w: 7397, hpx: 2671, h: 48 },
-  { file: "Gratt.png", name: "Gratt", w: 1200, hpx: 628, h: 50 },
+  { file: "cinpal.png", name: "Cinpal", w: 600, hpx: 191, h: 40 },
+  { file: "Seatrium_correto.png", name: "Seatrium", w: 600, hpx: 217, h: 48 },
+  { file: "Gratt.png", name: "Gratt", w: 600, hpx: 314, h: 50 },
   { file: "Metalsider_2.png", name: "Metalsider", w: 447, hpx: 447, h: 64 },
-  { file: "rosseti.png", name: "Rosseti", w: 1140, hpx: 191, h: 30 },
+  { file: "rosseti.png", name: "Rosseti", w: 600, hpx: 101, h: 30 },
   { file: "mmcite.png", name: "mmcité", w: 567, hpx: 231, h: 42 },
 ];
 
