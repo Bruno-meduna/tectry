@@ -787,57 +787,6 @@ export const home = {
     subtitle:
       "Cinco categorias que se sustentam: os equipamentos de jateamento e de pintura, o abrasivo que os alimenta, as peças de reposição e a assistência que os mantêm em operação.",
   },
-  /**
-   * Linha contínua animada da home. A seção prende na tela e o scroll conduz a
-   * câmera pela cena; cada parada destaca uma categoria. O nome e o link de cada
-   * etapa saem de `productCategories` pelo `id`, então aqui fica só o texto da
-   * linha. `x` é a coordenada da estação dentro do viewBox do SVG (0–1600) e
-   * define onde a câmera para — mudou o desenho, mude o `x` junto.
-   */
-  productionLine: {
-    title: "Uma peça entra bruta. Sai pronta.",
-    subtitle:
-      "Acompanhe a peça pela linha: ela entra enferrujada na máquina de gancheiras, alimentada pela granalha, atravessa a cabine de pintura e sai nas mãos do técnico. Cada parada mostra o que a Tecjato fornece ali.",
-    hint: "Role para percorrer a linha",
-    cta: "Ver linha completa",
-    legend: [
-      { state: "bruta" as const, label: "Peça bruta, com carepa e oxidação" },
-      { state: "limpa" as const, label: "Superfície jateada" },
-      { state: "pintada" as const, label: "Peça pintada e curada" },
-    ],
-    stations: [
-      {
-        id: "equipamentos" as ProductCategoryId,
-        x: 360,
-        marker: "Peça bruta entra na máquina",
-        text: "Gancheiras, mesa rotativa, esteira horizontal, shot peening, monovias e decapagem de tubos e barras. Dimensionamos a máquina para a sua peça, o seu volume e o acabamento que você precisa.",
-      },
-      {
-        id: "abrasivos" as ProductCategoryId,
-        x: 630,
-        marker: "Granalha recirculando",
-        text: "Granalha de aço alto carbono Tecshot e Tecgrit, micro esfera de vidro, óxido de alumínio e granalhas de inox. É o abrasivo que alimenta as turbinas e define o perfil da superfície.",
-      },
-      {
-        id: "pintura" as ProductCategoryId,
-        x: 940,
-        marker: "Pintura e cura na linha",
-        text: "Cabines com filtragem a seco, líquida ou eletrostática a pó, estufas estacionárias e de passagem, e o transportador aéreo que liga tudo. Integramos jateamento e pintura em uma linha só.",
-      },
-      {
-        id: "reposicao" as ProductCategoryId,
-        x: 1250,
-        marker: "Reposição em estoque",
-        text: "Turbinas, palhetas, revestimentos e componentes da linha turbinada e de ar comprimido, de fundição própria em ligas resistentes à abrasão. Em estoque, para a linha não parar esperando peça.",
-      },
-      {
-        id: "assistencia" as ProductCategoryId,
-        x: 1435,
-        marker: "Peça pronta sai da linha",
-        text: "Manutenção preventiva e corretiva, start-up de equipamentos novos e treinamento da sua equipe no seu chão de fábrica. Também somos distribuidora oficial Electronics Inc. em shot peening para a América do Sul.",
-      },
-    ],
-  },
   why: {
     title: "Por que Tecjato",
     reasons: [
