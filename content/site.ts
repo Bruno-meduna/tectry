@@ -33,6 +33,8 @@ export interface ProductSubItem {
    * mostra "em breve".
    */
   specFile?: string;
+  /** Variantes (nível 5): exibidas em grade na página do sub-equipamento. */
+  subItems?: ProductSubItem[];
 }
 
 /** Item dentro de uma categoria (nível 2 do fluxo, estilo Winoa). */
@@ -41,6 +43,12 @@ export interface ProductItem {
   slug: string;
   name: string;
   description: string;
+  /**
+   * Texto completo da página do item quando ele não tem sub-equipamentos.
+   * Mesmo formato do `detail` do sub-equipamento (parágrafos, "•" vira lista,
+   * linha terminada em ":" vira subtítulo).
+   */
+  detail?: string[];
   /** Rótulos curtos (nomes comerciais, variantes). */
   tags?: string[];
   /** Foto real do item (em /public). Sem isso, usa placeholder. */
@@ -277,55 +285,18 @@ export const productCategories: ProductCategory[] = [
           "Linha integrada de preparação de superfície e pintura, projetada de ponta a ponta pela mesma engenharia.",
         image: "/fotos/Pintura_turbinado.jpg",
         heroImage: "/fotos/Pintura_1.avif",
-        intro:
-          "Linha integrada de preparação de superfície e pintura, projetada de ponta a ponta pela mesma engenharia Tecjato. Escolha a tecnologia de pintura mais adequada ao seu produto e ao seu volume de produção.",
-        subItems: [
-          {
-            slug: "cabine-pintura-eletrostatica-po",
-            name: "Cabine de pintura eletrostática a pó",
-            description:
-              "Aplicação eletrostática de tinta em pó para acabamento uniforme, alta aderência e excelente aproveitamento de material.",
-            detail: [
-              "As cabines de pintura eletrostática a pó Tecjato aplicam tinta em pó carregada eletrostaticamente sobre a peça aterrada, garantindo uma camada uniforme com alta aderência e ótimo aproveitamento de material.",
-              "Após a aplicação, a peça segue para a cura em estufa, formando um revestimento resistente à corrosão, ao impacto e à abrasão.",
-              "Características:",
-              "• Alto aproveitamento de tinta com sistema de recuperação de pó",
-              "• Acabamento uniforme e resistente",
-              "• Processo limpo, sem solventes",
-              "• Fácil integração com a linha de jateamento",
-            ],
-            image: "/fotos/Cabine_de_pintura_cad.jpg",
-          },
-          {
-            slug: "pintura-a-seco",
-            name: "Pintura a seco",
-            description:
-              "Processo de pintura a pó sem uso de solventes, ideal para acabamentos resistentes e ambientes mais limpos.",
-            detail: [
-              "A pintura a seco utiliza tintas em pó aplicadas sem o uso de solventes, resultando em um processo mais limpo, seguro e com menor impacto ambiental.",
-              "Indicada para peças que exigem acabamento resistente e durável, é integrada à linha de preparação de superfície para um fluxo de produção contínuo.",
-              "Características:",
-              "• Sem emissão de solventes",
-              "• Camada espessa e resistente em uma única aplicação",
-              "• Menor desperdício de material",
-            ],
-            image: "/fotos/Pintura_turbinado.jpg",
-          },
-          {
-            slug: "pintura-liquida",
-            name: "Pintura líquida",
-            description:
-              "Aplicação de tintas líquidas para acabamentos versáteis, com ampla gama de cores e texturas.",
-            detail: [
-              "A pintura líquida Tecjato oferece grande versatilidade de cores, brilhos e texturas, sendo indicada para peças que exigem acabamento estético diferenciado ou especificações técnicas específicas.",
-              "As cabines são projetadas com sistemas de exaustão e filtragem que garantem segurança ao operador e qualidade no acabamento.",
-              "Aplicações comuns:",
-              "• Peças com geometria complexa",
-              "• Acabamentos especiais e cores personalizadas",
-              "• Integração com linhas de jateamento e secagem",
-            ],
-            image: "/fotos/Pintura_1.avif",
-          },
+        detail: [
+          "A linha completa Tecjato integra em um único fluxo a preparação de superfície e a pintura: o jateamento que limpa a peça e cria o perfil de ancoragem, o transporte entre as etapas, a cabine de pintura e a estufa de cura.",
+          "Tudo é projetado pela mesma engenharia, do dimensionamento à automação. Isso elimina as emendas entre fornecedores diferentes e garante que cada etapa trabalhe no ritmo da seguinte.",
+          "A tecnologia de pintura é definida conforme o seu produto e o seu volume de produção:",
+          "• Pintura eletrostática a pó — camada uniforme, alta aderência e ótimo aproveitamento de material, com cura em estufa",
+          "• Pintura a seco — processo sem solventes, mais limpo e com menor impacto ambiental",
+          "• Pintura líquida — ampla gama de cores, brilhos e texturas, para acabamentos especiais",
+          "O que a integração entrega:",
+          "• Um único responsável pelo projeto, pela fabricação e pela instalação",
+          "• Fluxo contínuo entre jateamento, pintura e cura, sem acúmulo entre etapas",
+          "• Automação e comandos integrados no mesmo painel",
+          "• Layout dimensionado conforme o espaço disponível na sua fábrica",
         ],
       },
       {
@@ -334,6 +305,85 @@ export const productCategories: ProductCategory[] = [
         description:
           "Cabines e sistemas a ar comprimido para peças complexas, áreas internas e acabamento controlado.",
         image: "/fotos/arcomprimido_1.jpg",
+        intro:
+          "Linha de jateamento por ar comprimido Tecjato, para peças que pedem acesso a áreas internas, geometria complexa ou controle fino do acabamento. O operador conduz o jato, e o equipamento é dimensionado conforme a peça e o volume de produção.",
+        subItems: [
+          {
+            slug: "cabine-de-jato",
+            name: "Cabine de jato",
+            description:
+              "Compartimento fechado em que o operador jateia a peça por dentro, com recuperação do abrasivo.",
+            detail: [
+              "As cabines de jato Tecjato são compartimentos fechados em que o operador trabalha no interior do equipamento, conduzindo o bico de jateamento diretamente sobre a peça.",
+              "Indicadas para peças grandes ou de geometria complexa, em que o jateamento manual dá o controle de acabamento que um equipamento automático não alcança. O abrasivo é recolhido no fundo e devolvido ao circuito.",
+              "Características:",
+              "• Compartimento revestido com material resistente à abrasão",
+              "• Sistema de recuperação e reaproveitamento do abrasivo",
+              "• Iluminação e exaustão dimensionadas para o trabalho interno",
+              "• Dimensões definidas conforme a peça e o volume de produção",
+            ],
+          },
+          {
+            slug: "tanque-de-jato",
+            name: "Tanque de jato",
+            description:
+              "Vaso de pressão que alimenta o bico com abrasivo, para jateamento fora da cabine.",
+            detail: [
+              "O tanque de jato é o vaso de pressão que armazena o abrasivo e o conduz pressurizado até o bico de jateamento.",
+              "É a solução para o trabalho que não cabe em cabine: estruturas montadas, tanques, embarcações e serviços em campo. Também atende como alimentação de cabines e gabinetes do tipo pressão.",
+              "Características:",
+              "• Operação por ar comprimido, com controle de vazão do abrasivo",
+              "• Uso em campo ou integrado a cabines e gabinetes",
+              "• Modelos dimensionados conforme a autonomia desejada",
+            ],
+          },
+          {
+            slug: "gabinetes",
+            name: "Gabinetes",
+            description:
+              "Gabinetes de pressão e de sucção para peças menores, com o operador trabalhando por fora.",
+            detail: [
+              "Nos gabinetes de jateamento a peça fica dentro do equipamento e o operador trabalha por fora, com as mãos em luvas acopladas e visor de acompanhamento. São indicados para peças menores e para processos de acabamento e limpeza fina.",
+              "A Tecjato fornece os dois sistemas — pressão e sucção —, cada um indicado para um tipo de trabalho.",
+              "Características comuns:",
+              "• Recuperação e reaproveitamento contínuo do abrasivo",
+              "• Visor, iluminação interna e luvas de manipulação",
+              "• Sistema de despoeiramento acoplado",
+            ],
+            subItems: [
+              {
+                slug: "gabinete-pressao",
+                name: "Gabinete de pressão",
+                description:
+                  "O abrasivo sai pressurizado de um tanque, com maior energia de impacto e produtividade em trabalhos mais pesados.",
+                detail: [
+                  "No gabinete de pressão o abrasivo é armazenado em um tanque pressurizado e conduzido já sob pressão até o bico de jateamento.",
+                  "Esse arranjo entrega maior energia de impacto e maior produtividade, sendo indicado para remoção de carepa, ferrugem e revestimentos, e para peças que exigem perfil de ancoragem mais acentuado.",
+                  "Características:",
+                  "• Maior velocidade de jateamento e menor tempo de ciclo",
+                  "• Indicado para trabalhos pesados de decapagem e preparação de superfície",
+                  "• Recuperação e reaproveitamento contínuo do abrasivo",
+                  "• Visor, iluminação interna, luvas de manipulação e despoeiramento acoplado",
+                ],
+              },
+              {
+                slug: "gabinete-succao",
+                name: "Gabinete de sucção",
+                description:
+                  "O abrasivo é arrastado por efeito venturi: solução mais simples e econômica para acabamento e limpeza leve.",
+                detail: [
+                  "No gabinete de sucção o abrasivo é arrastado até o bico por efeito venturi, sem tanque pressurizado. É a solução mais simples e de menor custo de operação e manutenção.",
+                  "Indicado para limpeza leve, fosqueamento, acabamento e peças delicadas, em que o controle do operador importa mais do que a velocidade de remoção.",
+                  "Características:",
+                  "• Construção mais simples, com menor custo de aquisição e manutenção",
+                  "• Ideal para acabamento, fosqueamento e limpeza fina",
+                  "• Recuperação e reaproveitamento contínuo do abrasivo",
+                  "• Visor, iluminação interna, luvas de manipulação e despoeiramento acoplado",
+                ],
+              },
+            ],
+          },
+        ],
       },
     ],
   },
@@ -341,9 +391,9 @@ export const productCategories: ProductCategory[] = [
     id: "pintura",
     label: "Equipamentos de pintura",
     title: "Equipamentos de pintura",
-    tagline: "Cabines, transportador aéreo e estufas para a linha de pintura.",
+    tagline: "Cabines de pintura e estufas de cura para a linha de pintura.",
     description:
-      "Equipamentos de pintura industrial dimensionados para o seu produto e o seu volume: cabines com o sistema de filtragem mais adequado ao processo, transportador aéreo para movimentar as peças entre as etapas e estufas para a cura. Fazemos também a linha completa, integrando jateamento e pintura no mesmo processo.",
+      "Equipamentos de pintura industrial dimensionados para o seu produto e o seu volume: cabines com o sistema de filtragem mais adequado ao processo e estufas para a cura. Fazemos também a linha completa, integrando jateamento e pintura no mesmo processo.",
     imageAlt: "Cabine de pintura Tecjato em operação",
     image: "/fotos/cabine-pintura.jpg",
     heroImage: "/fotos/Pintura_1.avif",
@@ -362,7 +412,6 @@ export const productCategories: ProductCategory[] = [
             name: "Cabine de pintura — filtragem a seco",
             description:
               "Retenção do overspray por filtros, sem uso de água, para linhas de pintura a pó ou líquida.",
-            image: "/fotos/cabine-pintura-seco.jpg",
           },
           {
             slug: "cabine-pintura-filtragem-liquida",
@@ -377,13 +426,6 @@ export const productCategories: ProductCategory[] = [
               "Aplicação eletrostática de tinta em pó, com sistema de recuperação de material e acabamento uniforme.",
           },
         ],
-      },
-      {
-        slug: "transportador-aereo",
-        name: "Transportador aéreo",
-        description:
-          "Transportador aéreo para movimentação contínua das peças entre as etapas de jateamento, pintura e cura.",
-        image: "/fotos/transportador-aereo.jpg",
       },
       {
         slug: "estufa-pintura",
@@ -416,55 +458,18 @@ export const productCategories: ProductCategory[] = [
           "Linha integrada de preparação de superfície e pintura, projetada de ponta a ponta pela mesma engenharia.",
         image: "/fotos/Pintura_turbinado.jpg",
         heroImage: "/fotos/Pintura_1.avif",
-        intro:
-          "Linha integrada de preparação de superfície e pintura, projetada de ponta a ponta pela mesma engenharia Tecjato. Escolha a tecnologia de pintura mais adequada ao seu produto e ao seu volume de produção.",
-        subItems: [
-          {
-            slug: "cabine-pintura-eletrostatica-po",
-            name: "Cabine de pintura eletrostática a pó",
-            description:
-              "Aplicação eletrostática de tinta em pó para acabamento uniforme, alta aderência e excelente aproveitamento de material.",
-            detail: [
-              "As cabines de pintura eletrostática a pó Tecjato aplicam tinta em pó carregada eletrostaticamente sobre a peça aterrada, garantindo uma camada uniforme com alta aderência e ótimo aproveitamento de material.",
-              "Após a aplicação, a peça segue para a cura em estufa, formando um revestimento resistente à corrosão, ao impacto e à abrasão.",
-              "Características:",
-              "• Alto aproveitamento de tinta com sistema de recuperação de pó",
-              "• Acabamento uniforme e resistente",
-              "• Processo limpo, sem solventes",
-              "• Fácil integração com a linha de jateamento",
-            ],
-            image: "/fotos/Cabine_de_pintura_cad.jpg",
-          },
-          {
-            slug: "pintura-a-seco",
-            name: "Pintura a seco",
-            description:
-              "Processo de pintura a pó sem uso de solventes, ideal para acabamentos resistentes e ambientes mais limpos.",
-            detail: [
-              "A pintura a seco utiliza tintas em pó aplicadas sem o uso de solventes, resultando em um processo mais limpo, seguro e com menor impacto ambiental.",
-              "Indicada para peças que exigem acabamento resistente e durável, é integrada à linha de preparação de superfície para um fluxo de produção contínuo.",
-              "Características:",
-              "• Sem emissão de solventes",
-              "• Camada espessa e resistente em uma única aplicação",
-              "• Menor desperdício de material",
-            ],
-            image: "/fotos/Pintura_turbinado.jpg",
-          },
-          {
-            slug: "pintura-liquida",
-            name: "Pintura líquida",
-            description:
-              "Aplicação de tintas líquidas para acabamentos versáteis, com ampla gama de cores e texturas.",
-            detail: [
-              "A pintura líquida Tecjato oferece grande versatilidade de cores, brilhos e texturas, sendo indicada para peças que exigem acabamento estético diferenciado ou especificações técnicas específicas.",
-              "As cabines são projetadas com sistemas de exaustão e filtragem que garantem segurança ao operador e qualidade no acabamento.",
-              "Aplicações comuns:",
-              "• Peças com geometria complexa",
-              "• Acabamentos especiais e cores personalizadas",
-              "• Integração com linhas de jateamento e secagem",
-            ],
-            image: "/fotos/Pintura_1.avif",
-          },
+        detail: [
+          "A linha completa Tecjato integra em um único fluxo a preparação de superfície e a pintura: o jateamento que limpa a peça e cria o perfil de ancoragem, o transporte entre as etapas, a cabine de pintura e a estufa de cura.",
+          "Tudo é projetado pela mesma engenharia, do dimensionamento à automação. Isso elimina as emendas entre fornecedores diferentes e garante que cada etapa trabalhe no ritmo da seguinte.",
+          "A tecnologia de pintura é definida conforme o seu produto e o seu volume de produção:",
+          "• Pintura eletrostática a pó — camada uniforme, alta aderência e ótimo aproveitamento de material, com cura em estufa",
+          "• Pintura a seco — processo sem solventes, mais limpo e com menor impacto ambiental",
+          "• Pintura líquida — ampla gama de cores, brilhos e texturas, para acabamentos especiais",
+          "O que a integração entrega:",
+          "• Um único responsável pelo projeto, pela fabricação e pela instalação",
+          "• Fluxo contínuo entre jateamento, pintura e cura, sem acúmulo entre etapas",
+          "• Automação e comandos integrados no mesmo painel",
+          "• Layout dimensionado conforme o espaço disponível na sua fábrica",
         ],
       },
     ],
@@ -539,60 +544,6 @@ export const productCategories: ProductCategory[] = [
           "Abrasivo angular de alta dureza para decapagem agressiva, fosqueamento e preparação para revestimento.",
         image: "/fotos/oxido-aluminio.jpg",
         specFile: "oxido-aluminio.pdf",
-      },
-      {
-        slug: "granalha-inox-fundida",
-        name: "Granalha de Aço Inox Fundida",
-        description:
-          "Versões angular e esférica em aço inoxidável fundido, para jateamento sem contaminação ferrosa.",
-        intro:
-          "Granalha de aço inoxidável fundido para jateamento sem contaminação ferrosa, indicada para inox, alumínio e ligas não ferrosas. Disponível nas versões esférica e angular, conforme o acabamento desejado.",
-        subItems: [
-          {
-            slug: "inox-esferica",
-            name: "Inox Esférica",
-            description:
-              "Granalha de inox fundido esférica para limpeza e acabamento sem contaminação ferrosa, preservando a dimensão da peça.",
-            detail: [
-              "A granalha de aço inox fundida esférica é indicada para limpeza e acabamento de peças em inox, alumínio e ligas não ferrosas, sem o risco de contaminação ferrosa.",
-              "O formato esférico proporciona um acabamento uniforme e suave, preservando as dimensões da peça.",
-              "Características:",
-              "• Sem contaminação ferrosa",
-              "• Acabamento uniforme e limpo",
-              "• Alta resistência à oxidação",
-            ],
-            specFile: "inox-esferica.pdf",
-          },
-          {
-            slug: "inox-angular",
-            name: "Inox Angular",
-            description:
-              "Granalha de inox fundido angular para decapagem e fosqueamento sem risco de oxidação na peça.",
-            detail: [
-              "A granalha de aço inox fundida angular é indicada para decapagem e fosqueamento de peças não ferrosas, com perfil de ancoragem mais acentuado e sem contaminação ferrosa.",
-              "Seu formato angular oferece maior poder de corte para remoção de óxidos e preparação de superfície.",
-              "Características:",
-              "• Maior poder de corte e rugosidade",
-              "• Sem contaminação ferrosa",
-              "• Ideal para inox e ligas não ferrosas",
-            ],
-            specFile: "inox-angular.pdf",
-          },
-        ],
-      },
-      {
-        slug: "arame-inox-cortado",
-        name: "Granalha de Arame Inox Cortado",
-        description:
-          "Cut Wire em aço inox: alta resistência e vida útil prolongada, sem risco de oxidação na peça.",
-        specFile: "arame-inox-cortado.pdf",
-      },
-      {
-        slug: "arame-cortado",
-        name: "Granalha de Arame Carbono Cortado",
-        description:
-          "Carbon Cut Wire em aço carbono: uniformidade dimensional e durabilidade para grandes volumes.",
-        specFile: "arame-cortado.pdf",
       },
     ],
   },
@@ -684,6 +635,25 @@ export const productSubItemBy = (
   const sub = found.item.subItems?.find((s) => s.slug === subSlug);
   if (!sub) return null;
   return { category: found.category, item: found.item, sub };
+};
+
+/** Busca uma variante (nível 5) por categoria + item + sub + slug. */
+export const productVariantBy = (
+  categoryId: string,
+  itemSlug: string,
+  subSlug: string,
+  variantSlug: string
+): {
+  category: ProductCategory;
+  item: ProductItem;
+  sub: ProductSubItem;
+  variant: ProductSubItem;
+} | null => {
+  const found = productSubItemBy(categoryId, itemSlug, subSlug);
+  if (!found) return null;
+  const variant = found.sub.subItems?.find((v) => v.slug === variantSlug);
+  if (!variant) return null;
+  return { ...found, variant };
 };
 
 export interface NavItem {

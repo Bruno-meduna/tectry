@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -13,53 +12,8 @@ import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import ProductIcon from "@/components/ui/ProductIcon";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import ProductDownloads from "@/components/ui/ProductDownloads";
-
-/**
- * Renderiza o texto da página do equipamento em blocos: linhas iniciadas por
- * "•" viram lista; linhas terminadas em ":" viram subtítulo; o resto, parágrafo.
- */
-function DetailContent({ blocks }: { blocks: string[] }) {
-  const out: ReactNode[] = [];
-  let bullets: string[] = [];
-
-  const flushBullets = (key: string) => {
-    if (bullets.length === 0) return;
-    out.push(
-      <ul
-        key={key}
-        className="space-y-1.5 pl-1 marker:text-azul-digital"
-      >
-        {bullets.map((b, i) => (
-          <li key={i} className="flex gap-2.5">
-            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-azul-digital" />
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
-    );
-    bullets = [];
-  };
-
-  blocks.forEach((line, i) => {
-    if (line.startsWith("•")) {
-      bullets.push(line.replace(/^•\s*/, ""));
-      return;
-    }
-    flushBullets(`ul-${i}`);
-    if (line.endsWith(":")) {
-      out.push(
-        <p key={i} className="font-display font-bold text-azul-inst">
-          {line}
-        </p>
-      );
-    } else {
-      out.push(<p key={i}>{line}</p>);
-    }
-  });
-  flushBullets("ul-end");
-
-  return <div className="space-y-4 text-slate-600">{out}</div>;
-}
+import DetailContent from "@/components/ui/DetailContent";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 
 export function generateStaticParams() {
   return productCategories.flatMap((c) =>
@@ -129,7 +83,73 @@ export default async function SubItemPage({
         </div>
       </section>
 
-      {/* Corpo: imagem + descrição + CTA */}
+      {equipment.subItems && equipment.subItems.length > 0 ? (
+        /* Corpo: texto + grade de variantes (nível 5) */
+        <section className="bg-white py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl text-lg leading-relaxed">
+              <DetailContent
+                blocks={equipment.detail ?? [equipment.description]}
+              />
+            </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {equipment.subItems.map((variant) => (
+                <Link
+                  key={variant.slug}
+                  href={`/produtos/${category.id}/${product.slug}/${equipment.slug}/${variant.slug}`}
+                  className="group flex flex-col overflow-hidden rounded-xl border border-cinza-borda bg-white text-center transition hover:border-azul-digital/40 hover:shadow-lg"
+                >
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-cinza-claro">
+                    {variant.image ? (
+                      <Image
+                        src={variant.image}
+                        alt={variant.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <PhotoPlaceholder
+                        label={variant.name}
+                        rounded={false}
+                        className="h-full w-full"
+                      />
+                    )}
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="font-display text-base font-bold uppercase tracking-wide text-azul-inst transition group-hover:text-azul-digital">
+                      {variant.name}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
+                      {variant.description}
+                    </p>
+                    <span className="mt-4 inline-flex items-center justify-center gap-1.5 font-display text-sm font-semibold text-azul-digital transition group-hover:gap-2.5">
+                      Saiba mais
+                      <ArrowIcon />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-12 flex flex-wrap items-center gap-3 border-t border-cinza-borda pt-10">
+              <LinkButton
+                href={`/contato?interest=${category.id}`}
+                variant="primary"
+                className="px-8 py-3.5 text-base"
+              >
+                Fale conosco
+              </LinkButton>
+            </div>
+            <ProductDownloads
+              specFile={equipment.specFile}
+              catalogFile={product.catalogFile}
+              fdsFile={product.fdsFile}
+              className="mt-10"
+            />
+          </div>
+        </section>
+      ) : (
+        /* Corpo: imagem + descrição + CTA */
       <section className="bg-white py-16 lg:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-cinza-claro clip-diagonal-b">
@@ -182,6 +202,8 @@ export default async function SubItemPage({
           </div>
         </div>
       </section>
+
+      )}
 
       {/* Outros equipamentos da mesma linha */}
       {siblings.length > 0 && (

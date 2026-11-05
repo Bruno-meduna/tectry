@@ -13,6 +13,7 @@ import ProductIcon from "@/components/ui/ProductIcon";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import ProductDownloads from "@/components/ui/ProductDownloads";
+import DetailContent from "@/components/ui/DetailContent";
 
 export function generateStaticParams() {
   return productCategories.flatMap((c) =>
@@ -180,11 +181,11 @@ export default async function ItemPage({
       ) : (
         /* Corpo: descrição + imagem + CTA */
         <section className="bg-white py-16 lg:py-20">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
+          <div className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:px-8">
             <div>
-              <p className="text-lg leading-relaxed text-slate-600">
-                {product.description}
-              </p>
+              <div className="text-lg leading-relaxed">
+                <DetailContent blocks={product.detail ?? [product.description]} />
+              </div>
               <p className="mt-6 text-slate-600">
                 Faz parte da linha de{" "}
                 <Link
@@ -206,7 +207,7 @@ export default async function ItemPage({
                 className="mt-10 border-t border-cinza-borda pt-8"
               />
             </div>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-cinza-claro clip-diagonal-b">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-cinza-claro clip-diagonal-b lg:sticky lg:top-28">
               {product.image ? (
                 <Image
                   src={product.image}
