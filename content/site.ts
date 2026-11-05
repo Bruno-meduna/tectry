@@ -172,6 +172,7 @@ export const productCategories: ProductCategory[] = [
               "• Engrenagens e rodas dentadas",
               "• Virabrequins",
             ],
+            image: "/fotos/shot-peening.jpg",
           },
           {
             slug: "monovias",
@@ -188,6 +189,7 @@ export const productCategories: ProductCategory[] = [
               "• Dispensa estocagem entre processos",
               "• Redução do contato humano com o processo",
             ],
+            image: "/fotos/monovias.jpg",
           },
           {
             slug: "esteira-horizontal",
@@ -246,6 +248,7 @@ export const productCategories: ProductCategory[] = [
               "• Vigas e perfis",
               "• Estrutura metálica em geral",
             ],
+            image: "/fotos/decapagem-tubos-barras.jpg",
           },
           {
             slug: "jateamento-botijoes-gas",
@@ -350,7 +353,7 @@ export const productCategories: ProductCategory[] = [
         name: "Cabine de pintura",
         description:
           "Cabines de pintura com o sistema de filtragem mais adequado ao seu processo: a seco, líquida ou eletrostática a pó.",
-        image: "/fotos/cabine-pintura.jpg",
+        image: "/fotos/cabine-pintura-seco.jpg",
         intro:
           "Cabines de pintura Tecjato, dimensionadas conforme a peça, o volume de produção e a tecnologia de pintura escolhida.",
         subItems: [
@@ -359,6 +362,7 @@ export const productCategories: ProductCategory[] = [
             name: "Cabine de pintura — filtragem a seco",
             description:
               "Retenção do overspray por filtros, sem uso de água, para linhas de pintura a pó ou líquida.",
+            image: "/fotos/cabine-pintura-seco.jpg",
           },
           {
             slug: "cabine-pintura-filtragem-liquida",
@@ -379,6 +383,7 @@ export const productCategories: ProductCategory[] = [
         name: "Transportador aéreo",
         description:
           "Transportador aéreo para movimentação contínua das peças entre as etapas de jateamento, pintura e cura.",
+        image: "/fotos/transportador-aereo.jpg",
       },
       {
         slug: "estufa-pintura",
@@ -394,6 +399,7 @@ export const productCategories: ProductCategory[] = [
             name: "Estufa de pintura estacionária",
             description:
               "Câmara única para cura em lote, indicada para produções menores ou peças de maior porte.",
+            image: "/fotos/estufa-pintura-estacionaria.jpg",
           },
           {
             slug: "estufa-pintura-passagem",

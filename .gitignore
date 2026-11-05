@@ -12,3 +12,6 @@ next-env.d.ts
 
 # Claude Code
 .claude/
+
+# Material bruto baixado do OneDrive (49 MB) — fora do build
+/Imagens_OneDrive
