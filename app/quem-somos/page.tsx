@@ -3,8 +3,8 @@ import { aboutPage, company } from "@/content/site";
 import QuoteButton from "@/components/quote/QuoteButton";
 import PhotoMontage from "@/components/ui/PhotoMontage";
 import PageHero from "@/components/ui/PageHero";
-import CtaBanner from "@/components/CtaBanner";
-import Timeline from "@/components/about/Timeline";
+import CtaBanner from "@/components/sections/CtaBanner";
+import Timeline from "@/components/quem-somos/Timeline";
 
 export const metadata: Metadata = {
   title: "Quem somos — a história da Tecjato",

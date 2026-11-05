@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { nav, productCategories, company } from "@/content/site";
-import QuoteButton from "./quote/QuoteButton";
-import ArrowIcon from "./ui/ArrowIcon";
+import QuoteButton from "@/components/quote/QuoteButton";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 
 export default function Header() {
   const pathname = usePathname();
@@ -19,10 +19,10 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center" aria-label="Tecjato — início">
           <Image
-            src="/logo/tecjato-trim.png"
+            src="/logo/tecjato.png"
             alt="Tecjato"
-            width={200}
-            height={47}
+            width={942}
+            height={198}
             priority
             className="h-10 w-auto sm:h-11"
           />

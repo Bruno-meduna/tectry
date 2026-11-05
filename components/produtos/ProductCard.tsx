@@ -1,8 +1,8 @@
 import Link from "next/link";
 import type { ProductCategory } from "@/content/site";
 import { productsPage } from "@/content/site";
-import ProductIcon from "./ui/ProductIcon";
-import ArrowIcon from "./ui/ArrowIcon";
+import ProductIcon from "@/components/ui/ProductIcon";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 
 export default function ProductCard({ category }: { category: ProductCategory }) {
   return (

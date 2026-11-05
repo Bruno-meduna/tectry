@@ -30,9 +30,13 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Marca */}
           <div>
-            <div className="inline-flex rounded-md bg-white px-4 py-3">
-              <Image src="/logo/tecjato-trim.png" alt="Tecjato" width={200} height={47} className="h-9 w-auto" />
-            </div>
+            <Image
+              src="/logo/tecjato-branco.png"
+              alt="Tecjato"
+              width={942}
+              height={198}
+              className="h-10 w-auto"
+            />
             <p className="mt-4 max-w-xs text-sm text-blue-100/80">{footer.tagline}</p>
             <div className="mt-5 flex gap-3">
               <a href={company.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-azul-digital">

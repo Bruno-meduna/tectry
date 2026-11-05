@@ -2,11 +2,11 @@ import Link from "next/link";
 import { home, productCategories } from "@/content/site";
 import PhotoMontage from "@/components/ui/PhotoMontage";
 import QuoteButton from "@/components/quote/QuoteButton";
-import ProductCard from "@/components/ProductCard";
-import ClientLogos from "@/components/ClientLogos";
+import ProductCard from "@/components/produtos/ProductCard";
+import ClientLogos from "@/components/sections/ClientLogos";
 import HeroRotator from "@/components/ui/HeroRotator";
 import ArrowIcon from "@/components/ui/ArrowIcon";
-import CtaBanner from "@/components/CtaBanner";
+import CtaBanner from "@/components/sections/CtaBanner";
 
 export default function HomePage() {
   return (

@@ -41,23 +41,34 @@ Veja [`.env.example`](.env.example). Para o formulário funcionar em produção:
 
 ## Estrutura
 ```
-app/
-  layout.tsx              # layout global, metadata/SEO, fontes, JSON-LD
-  page.tsx                # Início (8 seções de conversão)
-  produtos/page.tsx       # Produtos (seções ancoradas por linha)
-  clientes/page.tsx       # Clientes
-  certificacoes/page.tsx  # Certificações
-  contato/page.tsx        # Contato (formulário + mapa + representantes)
-  api/cotacao/route.ts    # Envio de cotação (Resend) + auto-resposta + honeypot
+app/                              # rotas (App Router)
+  layout.tsx                      # layout global, metadata/SEO, fontes, JSON-LD
+  page.tsx                        # Início
+  quem-somos/ · contato/ · recursos/
+  produtos/
+    page.tsx                      # vitrine das categorias
+    [categoria]/                  # categoria → item → sub-equipamento → variante
+      [item]/[sub]/[variante]/
+  api/cotacao/route.ts            # envio de cotação (Resend) + auto-resposta + honeypot
   sitemap.ts · robots.ts · opengraph-image.tsx
-content/site.ts           # TODA a copy (i18n-ready) — fonte única de textos
+
+content/site.ts                   # TODA a copy (i18n-ready) — fonte única de textos
+lib/                              # helpers puros (sem JSX)
+
 components/
-  Header · Footer · WhatsAppButton · ClientLogos · ProductCard
-  quote/                  # QuoteProvider, QuoteModal, QuoteForm, QuoteButton
-  ui/                     # PhotoPlaceholder, ProductIcon
-public/
-  logo/tecjato.png        # logo (header, rodapé, OG)
-  clientes/*.png          # logos reais da esteira
+  layout/                         # Header, Footer, WhatsAppButton
+  sections/                       # blocos reutilizáveis de página (CtaBanner, ClientLogos)
+  produtos/                       # ProductCard
+  quem-somos/                     # Timeline
+  quote/                          # QuoteProvider, QuoteModal, QuoteForm, QuoteButton
+  ui/                             # peças genéricas (botões, ícones, placeholders, DetailContent)
+
+public/                           # tudo que o site serve
+  logo/tecjato.png                # logo transparente (header, OG)
+  logo/tecjato-branco.png         # logo transparente em branco (rodapé escuro)
+  fotos/ · clientes/ · documentos/
+
+assets-fonte/                     # material bruto, NÃO servido (ver README de lá)
 ```
 
 ## Conteúdo a substituir (placeholders marcados)
