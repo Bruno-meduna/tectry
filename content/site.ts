@@ -283,7 +283,7 @@ export const productCategories: ProductCategory[] = [
         name: "Linha completa: jateamento + pintura",
         description:
           "Linha integrada de preparação de superfície e pintura, projetada de ponta a ponta pela mesma engenharia.",
-        image: "/fotos/Pintura_turbinado.jpg",
+        image: "/fotos/linha-completa.jpg",
         heroImage: "/fotos/Pintura_1.avif",
         detail: [
           "A linha completa Tecjato integra em um único fluxo a preparação de superfície e a pintura: o jateamento que limpa a peça e cria o perfil de ancoragem, o transporte entre as etapas, a cabine de pintura e a estufa de cura.",
@@ -343,6 +343,7 @@ export const productCategories: ProductCategory[] = [
             name: "Gabinetes",
             description:
               "Gabinetes de pressão e de sucção para peças menores, com o operador trabalhando por fora.",
+            image: "/fotos/gabinete-pressao.jpg",
             detail: [
               "Nos gabinetes de jateamento a peça fica dentro do equipamento e o operador trabalha por fora, com as mãos em luvas acopladas e visor de acompanhamento. São indicados para peças menores e para processos de acabamento e limpeza fina.",
               "A Tecjato fornece os dois sistemas — pressão e sucção —, cada um indicado para um tipo de trabalho.",
@@ -459,7 +460,7 @@ export const productCategories: ProductCategory[] = [
         name: "Linha completa: jateamento + pintura",
         description:
           "Linha integrada de preparação de superfície e pintura, projetada de ponta a ponta pela mesma engenharia.",
-        image: "/fotos/Pintura_turbinado.jpg",
+        image: "/fotos/linha-completa.jpg",
         heroImage: "/fotos/Pintura_1.avif",
         detail: [
           "A linha completa Tecjato integra em um único fluxo a preparação de superfície e a pintura: o jateamento que limpa a peça e cria o perfil de ancoragem, o transporte entre as etapas, a cabine de pintura e a estufa de cura.",
