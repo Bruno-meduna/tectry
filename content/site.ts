@@ -336,6 +336,7 @@ export const productCategories: ProductCategory[] = [
               "• Uso em campo ou integrado a cabines e gabinetes",
               "• Modelos dimensionados conforme a autonomia desejada",
             ],
+            image: "/fotos/tanque-de-jato.jpg",
           },
           {
             slug: "gabinetes",
@@ -365,6 +366,7 @@ export const productCategories: ProductCategory[] = [
                   "• Recuperação e reaproveitamento contínuo do abrasivo",
                   "• Visor, iluminação interna, luvas de manipulação e despoeiramento acoplado",
                 ],
+                image: "/fotos/gabinete-pressao.jpg",
               },
               {
                 slug: "gabinete-succao",
@@ -380,6 +382,7 @@ export const productCategories: ProductCategory[] = [
                   "• Recuperação e reaproveitamento contínuo do abrasivo",
                   "• Visor, iluminação interna, luvas de manipulação e despoeiramento acoplado",
                 ],
+                image: "/fotos/gabinete-succao.jpg",
               },
             ],
           },
