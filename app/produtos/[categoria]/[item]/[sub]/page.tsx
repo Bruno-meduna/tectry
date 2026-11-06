@@ -84,14 +84,14 @@ export default async function SubItemPage({
       </section>
 
       {equipment.subItems && equipment.subItems.length > 0 ? (
-        /* Corpo: texto + grade de variantes (nível 5) */
+        /* Corpo: abertura curta + grade de variantes (nível 5) */
         <section className="bg-white py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl text-lg leading-relaxed">
-              <DetailContent
-                blocks={equipment.detail ?? [equipment.description]}
-              />
-            </div>
+            {equipment.intro && (
+              <p className="max-w-3xl text-lg leading-relaxed text-slate-600">
+                {equipment.intro}
+              </p>
+            )}
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {equipment.subItems.map((variant) => (
                 <Link

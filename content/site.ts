@@ -33,6 +33,8 @@ export interface ProductSubItem {
    * mostra "em breve".
    */
   specFile?: string;
+  /** Texto curto de abertura da grade de variantes (quando há `subItems`). */
+  intro?: string;
   /** Variantes (nível 5): exibidas em grade na página do sub-equipamento. */
   subItems?: ProductSubItem[];
 }
@@ -344,14 +346,8 @@ export const productCategories: ProductCategory[] = [
             description:
               "Gabinetes de pressão e de sucção para peças menores, com o operador trabalhando por fora.",
             image: "/fotos/gabinete-pressao.jpg",
-            detail: [
-              "Nos gabinetes de jateamento a peça fica dentro do equipamento e o operador trabalha por fora, com as mãos em luvas acopladas e visor de acompanhamento. São indicados para peças menores e para processos de acabamento e limpeza fina.",
-              "A Tecjato fornece os dois sistemas — pressão e sucção —, cada um indicado para um tipo de trabalho.",
-              "Características comuns:",
-              "• Recuperação e reaproveitamento contínuo do abrasivo",
-              "• Visor, iluminação interna e luvas de manipulação",
-              "• Sistema de despoeiramento acoplado",
-            ],
+            intro:
+              "Nos gabinetes de jateamento a peça fica dentro do equipamento e o operador trabalha por fora, com luvas acopladas e visor de acompanhamento. Disponíveis nos sistemas de pressão e de sucção, cada um indicado para um tipo de trabalho.",
             subItems: [
               {
                 slug: "gabinete-pressao",
