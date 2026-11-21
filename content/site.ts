@@ -579,25 +579,28 @@ export const productCategories: ProductCategory[] = [
     description:
       "Assistência técnica especializada para manter o seu processo em operação: manutenção preventiva e corretiva, start-up de máquinas e treinamento da sua equipe in loco. Também somos distribuidora oficial Electronics Inc. (EUA) em shot peening para a América do Sul.",
     imageAlt: "Equipe de assistência técnica Tecjato em campo",
-    image: "/fotos/assistencia-tec.jpg",
+    image: "/fotos/assistencia-tecnica.jpg",
     items: [
       {
         slug: "manutencao",
         name: "Manutenção",
         description:
           "Manutenção preventiva e corretiva de equipamentos de jateamento, com peças originais e técnicos especializados.",
+        image: "/fotos/manutencao.jpg",
       },
       {
         slug: "start-up",
         name: "Start-up de máquinas",
         description:
           "Instalação, comissionamento e start-up de equipamentos novos, garantindo desempenho desde o primeiro ciclo.",
+        image: "/fotos/start-up.jpg",
       },
       {
         slug: "treinamento",
         name: "Treinamento in loco",
         description:
           "Capacitação da sua equipe na operação e manutenção do equipamento, direto no seu chão de fábrica.",
+        image: "/fotos/treinamento-in-loco.jpg",
       },
     ],
   },
