@@ -130,7 +130,7 @@ export const productCategories: ProductCategory[] = [
         name: "Jateamento turbinado",
         description:
           "Máquinas de turbina de alta produtividade para limpeza, decapagem e preparação de superfície em grandes volumes.",
-        image: "/fotos/maquinas_3.jpg",
+        image: "/fotos/maquinas.jpg",
         intro:
           "Linha completa de equipamentos de jateamento por turbina marca Tecjato, com construção mecânica robusta e materiais de excelente qualidade, o que garante longa vida e baixo custo de manutenção.",
         subItems: [
